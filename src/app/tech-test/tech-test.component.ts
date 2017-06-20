@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero }                from './hero';
-import { HeroService }         from './hero.service';
+import { Hero }                from 'services/hero';
+import { HeroService }         from 'services/hero.service';
 
 @Component({
   selector: 'app-tech-test',
-  providers: [HeroService], 
+  providers: [HeroService],
   templateUrl: './tech-test.component.html',
   styleUrls: ['./scss/bootstrap.scss']
 })

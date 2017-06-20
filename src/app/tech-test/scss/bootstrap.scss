@@ -1,5 +1,5 @@
-$icon-font-path: '../../../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'; //Needed for mobile carousel navigation arrows.npm
-@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/'; //Needed for mobile carousel navigation arrows.npm
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "scaffolding";
 @import "nav";
 @import "promotion-cover";

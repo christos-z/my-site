@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3" *ngFor="let hero of skills" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <img style="width: 100%;" [src]="hero.img" />
+      <span class="badge">{{hero.id}}</span>
+      <span>{{hero.name}}</span>
+      <button class="delete"
+              (click)="delete(hero); $event.stopPropagation()">x
+      </button>
+    </div>
+  </div>
+</div>
