@@ -6,28 +6,26 @@ import { SkillService }         from 'services/skill.service';
 @Component({
   selector: 'my-skills',
   providers: [SkillService],
-  templateUrl: './tech-test.component.html',
+  templateUrl: './my-skills.component.html',
   styleUrls: ['./scss/bootstrap.scss']
 })
 export class MySkillsComponent implements OnInit {
 
-  skills: Skill[];
+  skills: Skill;
 
   constructor(private sanitizer: DomSanitizer,
-              private heroService: SkillService) {
+              private skillService: SkillService) {
 
   }
 
-  getHeroes(): void {
-    this.heroService
-        .getHeroes()
-        .then(skills => this.skills = skills)
-        .then(() => this.skills[0].img = this.sanitizer.bypassSecurityTrustUrl(this.skills[0].img));
-
+  getSkills(): void {
+    this.skillService
+        .getSkills()
+        .subscribe(skills => this.skills = skills) 
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getSkills();
   }
 
 }

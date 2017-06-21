@@ -2,7 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TechTestComponent }   from 'app/tech-test/tech-test.component';
-import { MySkillsComponent }    from 'app/my-skills/tech-test.component';
+import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
 
 const routes: Routes = [
   { path: 'tech-test',  component: TechTestComponent },

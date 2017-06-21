@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3" *ngFor="let skill of skills">
+      <img style="width: 100%;" [src]="skill.img" />
+      <span>{{skill.name}}</span>
+    </div>
+  </div>
+</div>

@@ -8,8 +8,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TechTestComponent } from '../tech-test/tech-test.component';
-import { MySkillsComponent }    from 'app/my-skills/tech-test.component';
+import { TechTestComponent } from 'app/tech-test/tech-test.component';
+import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
 
 @NgModule({
   imports: [

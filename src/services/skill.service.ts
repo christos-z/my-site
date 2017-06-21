@@ -1,7 +1,10 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { DomSanitizer } from '@angular/platform-browser';
 
-import 'rxjs/add/operator/toPromise';
+import { Observable }        from 'rxjs/Observable';
+
+import 'rxjs/add/operator/map';
 
 import { Skill } from './skill';
 
@@ -9,53 +12,19 @@ import { Skill } from './skill';
 export class SkillService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private heroesUrl = 'api/skills';  // URL to web api
+  private skillsUrl = 'api/skills';
 
-  constructor(private http: Http) { }
+  constructor(private sanitizer: DomSanitizer,
+              private http: Http) { }
 
-  getHeroes(): Promise<Skill[]> {
-    return this.http.get(this.heroesUrl)
-      .toPromise()
-      .then(response => response.json().data as Skill[])
-      .catch(this.handleError);
-  }
-
-
-  getHero(id: number): Promise<Skill> {
-    const url = `${this.heroesUrl}/${id}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data as Skill)
-      .catch(this.handleError);
-  }
-
-  delete(id: number): Promise<void> {
-    const url = `${this.heroesUrl}/${id}`;
-    return this.http.delete(url, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
-  }
-
-  create(name: string): Promise<Skill> {
-    return this.http
-      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data as Skill)
-      .catch(this.handleError);
-  }
-
-  update(skill: Skill): Promise<Skill> {
-    const url = `${this.heroesUrl}/${skill.id}`;
-    return this.http
-      .put(url, JSON.stringify(skill), {headers: this.headers})
-      .toPromise()
-      .then(() => skill)
-      .catch(this.handleError);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+  getSkills(): Observable<Skill>  {
+    return this.http.get(this.skillsUrl)
+        .map(response => response.json().data)
+        .map((skills) => {
+          return skills.map(skill => {
+            skill.img = this.sanitizer.bypassSecurityTrustUrl(skill.img);
+            return skill
+          })
+        });
   }
 }
