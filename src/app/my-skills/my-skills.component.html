@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-3" *ngFor="let skill of skills">
-      <img style="width: 100%;" [src]="skill.img" />
-      <span>{{skill.name}}</span>
+  <div class="row" style="display: inline-flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-wrap:wrap">
+      <div class="col-xs-3" *ngFor="let skill of skills">
+        <span>{{skill.name}}</span>
+      <img style="width: 100%" [src]="skill.img" />
     </div>
   </div>
 </div>

@@ -22,7 +22,11 @@ export class SkillService {
         .map(response => response.json().data)
         .map((skills) => {
           return skills.map(skill => {
-            skill.img = this.sanitizer.bypassSecurityTrustUrl(skill.img);
+            if(skill.imgType === 'htmlSvg') {
+              console.log(skill);
+              skill.img = this.sanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;utf8,${skill.img}`);
+            }
+            // skill.img = this.sanitizer.bypassSecurityTrustUrl(skill.img);
             return skill
           })
         });
