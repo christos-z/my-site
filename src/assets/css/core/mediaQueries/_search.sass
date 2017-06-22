@@ -1,0 +1,51 @@
+@media screen and (min-width: 769px)
+
+  .navbar-fixed-top
+
+    .navbar .search-games-form .search-form-container .search-text-input,
+    .inner-search-results .search-result .game-info h3
+      font-size: $search-title-fontsize-desktop
+      
+    .navbar .search-games-form
+
+      .cancel-search
+        font-size: $brand-fontsize-5
+        padding: 20px 54px
+
+      .clear-btn
+        max-height: $header-height-desktop
+        
+        .icon
+          font-size: $brand-icon-fontsize-4
+
+    .inner-search-results
+
+      @if $search-results-margin-desktop != 0
+        margin-top: $search-results-margin-desktop
+
+      .search-result
+
+        @if $search-result-padding-desktop != inherit
+          .info-area
+            padding: $search-result-padding-desktop
+
+        @if $search-subtitle-fontsize-desktop != inherit
+          .game-info h4
+            font-size: $search-subtitle-fontsize-desktop
+
+        @if $search-play-button-display != none
+          .play-btn
+            font-size: $brand-fontsize-5
+            padding: 26px 40px
+
+            .icon
+              font-size: 28px
+
+        .result-thumbnail
+          height: 68px
+
+        .game-info
+          padding-left: 18px
+
+        &.not-found .info-area
+          padding: $search-not-found-padding-desktop

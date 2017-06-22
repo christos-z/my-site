@@ -1,0 +1,19 @@
+@media screen and (min-width: 769px)
+
+  .modal-overlay .navbar-static
+
+    @if $header-static-padding != inherit
+      &.modal-header [class*='-heading']
+        padding: $header-static-padding
+
+      [class*='-btn']
+        padding: $header-static-icon-padding
+
+      .icon
+        font-size: $header-static-icon-fontsize
+
+    &.modal-header .toggle-ctas
+      display: inline-flex
+
+    .close-btn
+      margin: 0 0 0 auto

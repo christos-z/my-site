@@ -1,0 +1,97 @@
+.native-toggle
+  display: inline-block
+  overflow: hidden
+
+  input, label:before,
+  label:after
+    position: absolute
+
+  input
+    margin: 0
+    opacity: 0
+
+  label
+    color: $custom-toggle-color
+    display: inline-block
+    font-size: $brand-fontsize-4
+    line-height: 24px
+    max-height: 24px
+    padding-left: 34px
+    position: relative
+
+    &:before
+      background: $custom-field-bg
+      border: $custom-toggle-border
+      content: ""
+      left: 0
+      height: 24px
+      top: 0
+      width: 24px
+
+    &.no-text
+      font-size: 0
+      padding-left: 24px
+
+  input:checked + label:before
+    border-color: $custom-toggle-primary-border-color
+    color: $custom-toggle-icon-color
+
+  &.invalid-field label:before
+    border-color: $invalid-field-border-color
+
+.custom-checkbox
+
+  input:checked + label:before
+    @extend .icon-checked
+    font-size: $custom-field-icon-fontsize
+    line-height: 20px
+    text-align: center
+    vertical-align: middle
+
+  label:before
+    border-radius: $checkbox-radius
+
+.custom-radio
+  
+  label:before
+    border-radius: 50%
+
+  input:checked + label:after
+    +icon-bubble($custom-toggle-icon-color, $radio-size, $radio-pos)
+
+.custom-toggle
+  position: relative
+
+  input
+    float: left
+    height: 20px
+    margin: 0 10px 0 0
+    opacity: 0
+    width: 40px
+
+  label
+    color: $custom-toggle-color
+    cursor: pointer
+    font-size: $brand-fontsize-4
+    line-height: 20px
+
+    &:after,
+    &:before
+      +icon-bubble($custom-toggle-dot-color)
+      transition: 0.3s all ease-in-out
+
+    &:before
+      border-radius: 10px
+      transition: 0.3s all ease-in-out
+      width: 40px
+
+    &.switch-btn-off:before
+      background: $custom-toggle-off-bg
+
+    &.switch-btn-on
+
+      &:before
+        background: $custom-toggle-on-bg
+
+      &:after
+        left: 20px

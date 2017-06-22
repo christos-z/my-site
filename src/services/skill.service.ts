@@ -23,10 +23,8 @@ export class SkillService {
         .map((skills) => {
           return skills.map(skill => {
             if(skill.imgType === 'htmlSvg') {
-              console.log(skill);
               skill.img = this.sanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;utf8,${skill.img}`);
             }
-            // skill.img = this.sanitizer.bypassSecurityTrustUrl(skill.img);
             return skill
           })
         });

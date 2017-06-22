@@ -7,7 +7,10 @@ import { SkillService }         from 'services/skill.service';
   selector: 'my-skills',
   providers: [SkillService],
   templateUrl: './my-skills.component.html',
-  styleUrls: ['./scss/bootstrap.scss']
+  styleUrls: [
+    './scss/main.sass',
+    './scss/animation.sass',
+    ]
 })
 export class MySkillsComponent implements OnInit {
 

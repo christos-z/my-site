@@ -1,0 +1,50 @@
+.custom-notification
+  padding: 40px 60px 0
+
+  &:after,
+  &:not(.alert) .close-btn,
+  &:not(.alert) > .icon
+    position: absolute
+
+  .icon
+    margin: 0
+
+  &.error figcaption
+    color: $brand-shade-7
+    
+  .close-btn
+    background: none
+    font-size: 0
+    padding: 5px
+    
+    .icon-close
+      font-size: $brand-icon-fontsize-1
+      line-height: 1
+
+  &:not(.alert)
+
+    & > .icon
+      bottom: -30px
+      left: 20px
+
+    .close-btn
+      right: 15px
+      top: 15px
+
+    &:after
+      background: inherit
+      bottom: -35px
+      box-shadow: inherit
+      height: 140px
+      content: ""
+      left: 0
+      right: 0
+      transform: skewY(-4deg)
+      z-index: -1
+
+    figcaption
+      height: 50px
+
+  &.alert
+    box-shadow: $alert-shadow
+    padding: 10px

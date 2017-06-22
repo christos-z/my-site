@@ -1,0 +1,155 @@
+.banner-carousel
+  margin-bottom: 20px
+
+  @if $carousel-dots-radius != 0
+    .carousel-indicators li
+      border-radius: $carousel-dots-radius
+
+  .carousel-inner,
+  .carousel-inner .item,
+  .banner-slide,
+  .banner-slide > .img-responsive
+    position: relative
+
+  .carousel-inner,
+  .banner-slide.no-image .carousel-text
+    width: 100%
+
+  .carousel-inner,
+  .banner-slide
+    overflow: hidden
+
+  .carousel-inner .item,
+  .carousel-control
+    display: none
+
+  .low-contrast .banner-container
+    color: $brand-shade-1
+
+  .high-contrast .banner-container
+    color: $brand-shade-7
+
+  &.carousel
+    background: none
+
+  .carousel-inner
+
+    .item
+      -webkit-transition: 0.6s ease-in-out left
+      transition: 0.6s ease-in-out left
+
+    .active,
+    .next, .prev
+      display: block
+
+    .next,
+    .prev
+      position: absolute
+      top: 0
+      width: 100%
+
+    .next.left,
+    .prev.right
+      left: 0
+
+    .active
+      left: 0
+
+      &.left
+
+        left: -100%
+
+      &.right
+        left: 100%
+
+    .next
+      left: 100%
+
+    .prev
+      left: -100%
+
+  .banner-container
+    display: block
+    min-width: 320px
+
+  .banner-slide
+    align-items: center
+    display: flex
+    justify-content: center
+
+    &.reverse-order
+      flex-direction: row-reverse
+
+    &.no-image .carousel-text
+      text-align: center
+
+    &:not(.no-image) [class*='-heading']
+      display: inline-block
+
+    .carousel-text
+      font-size: $fluid-fontsize-4
+      padding: 20px
+      text-align: left
+      text-transform: uppercase
+      z-index: 1
+      width: 40%
+
+      .title-break
+        line-height: 1
+
+    .caption-title,
+    .caption-subtitle
+      font-family: $brand-primary-font-family
+      margin-bottom: 10px
+
+    .caption-title
+      font-size: $brand-fontsize-7
+
+    .carousel-badge
+      +icon-bubble ($carousel-banner-badge-bg, 3.6em, -1)
+      font-size: $brand-fontsize-5
+      font-weight: 600
+      margin-bottom: 25px
+
+    .sponsor-container
+      margin-top: 20px
+      text-transform: lowercase
+
+      .sponsor-text
+        font-size: $fluid-fontsize-2
+        margin-bottom: 5px
+
+      .img-responsive
+        line-height: 1
+        max-width: 35%
+
+    .img-container
+      width: 60%
+
+      .img-responsive
+        min-width: 271px
+        max-width: 100%
+
+    .custom-cta
+      font-size: inherit
+      margin-top: 15px
+
+  .carousel-indicators
+    bottom: -20px
+    font-size: 0
+    left: 50%
+    position: absolute
+    transform: translateX(-50%)
+
+    li
+      background: $opacity-black-6
+      cursor: pointer
+      float: left
+      height: $carousel-dots-height
+      width: $carousel-dots-width
+
+      &:not(:first-of-type)
+        margin-left: 5px
+
+      &.active
+        background: $brand-shade-1

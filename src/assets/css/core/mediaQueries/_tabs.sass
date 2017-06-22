@@ -1,0 +1,24 @@
+@media screen and (min-width: 769px)
+
+  .custom-tab
+
+    &.secondary li
+
+      &, &:hover, &.active
+        font-size: $tab-secondary-fontsize-desktop
+
+    &.tertiary
+      display: inline-flex
+      justify-content: flex-start
+
+      @if $tab-tertiary-padding-desktop != inherit
+        li
+          padding: $tab-tertiary-padding-desktop
+
+        &, &:hover, &.active
+          font-size: $tab-tertiary-fontsize-desktop
+
+@media screen and (max-width: 768px)
+  
+  .custom-tab:after
+    width: 200%

@@ -1,0 +1,89 @@
+@media screen and (min-width: 1360px)
+
+  @if $brand-logo-bg == transparent
+    .navbar-fixed-top
+      +mask-background($header-bg, $header-height-desktop)
+
+    .search-field-enabled
+
+      &:before,
+      &:after
+        background: $brand-color-2
+
+@media screen and (min-width: 990px)
+
+  .navbar-fixed-top .navbar .search-container
+    flex-grow: 1.5
+
+@media screen and (min-width: 769px)
+
+  .navbar-fixed-top
+    height: initial
+
+    .navbar
+      @if $header-language-padding != none
+        .lang-selector
+          padding: $header-language-padding-desktop
+
+      @if $header-search-icon-fontsize != inherit
+        .icon.icon-search
+          font-size: initial
+          line-height: 22px
+
+      @if $header-deposit-margin != 0
+        .user-info .balance-value
+          padding-left: $header-deposit-margin
+
+      .search-container,
+      .user-info
+        max-height: $header-height-desktop
+
+      [class*='-btn']
+        padding: $header-icon-padding-desktop
+
+      .brand-logo
+        height: $header-logo-height-desktop
+
+      .icon
+        font-size: 22px
+
+      .custom-cta.deposit,
+      .login-container
+        align-self: center 
+        display: inline-flex
+
+      .user-info
+
+        .user-menu-cta .icon-bubble
+          right: 11px
+          top: 11px
+
+        .deposit:not(.custom-cta)
+          display: none
+
+        .balance-value
+          font-size: $header-balance-fontsize
+
+          & + .user-btn
+            padding-left: 5px
+
+        .deposit
+          margin-right: $header-deposit-margin
+
+        .login-container
+          margin-right: $header-menu-margin
+
+          .custom-cta:last-of-type
+            float: right
+            margin-left: 10px
+
+        .user-btn
+          padding: 20px
+
+  .navbar-top-visible
+    margin-top: $header-height-desktop
+
+@media screen and (max-width: 374px)
+
+  .navbar-fixed-top .navbar .search-container
+    flex-grow: 0.5

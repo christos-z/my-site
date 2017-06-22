@@ -1,0 +1,45 @@
+.custom-menu
+  color: $primary-cta-color
+  font-size: $custom-menu-fontsize
+  font-weight: $brand-fontsize-weight
+
+  @if $custom-menu-transform != inherit
+    text-transform: $custom-menu-transform 
+
+  @if $custom-menu-bubble-align != inherit
+    .icon-bubble
+      float: $custom-menu-bubble-align
+
+  @if $custom-menu-icon-active-color != inherit
+    .active .icon-arrow-next
+      color: $custom-menu-icon-active-color
+
+  li
+    background: $custom-menu-bg
+    line-height: 20px
+    padding: $custom-menu-padding
+    position: relative
+
+    &:not(:first-of-type)
+      box-shadow: $custom-menu-separator
+
+    .icon-arrow-next
+      color: $brand-shade-3
+      font-size: $custom-menu-icon-fontsize
+      position: absolute
+      right: 20px
+
+    .icon:not(.icon-arrow-next)
+      float: left
+      font-size: $brand-icon-fontsize-4
+      line-height: 1
+      margin-right: 18px
+
+    .icon-bubble
+      margin: 0 15px 0 5px
+
+    &:hover
+      background: $custom-menu-hover-bg
+
+    &.active
+      background: $custom-menu-active-bg

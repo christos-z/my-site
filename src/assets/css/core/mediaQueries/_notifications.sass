@@ -1,0 +1,20 @@
+@media screen and (min-width: 769px)
+
+  @if $notification-max-width != none
+    .custom-notification:not(.alert)
+      max-width: $notification-max-width
+  
+  .custom-notification
+    
+    &:not(.alert)
+      font-size: $msg-fontsize-desktop
+    
+    &.alert
+      font-size: $alert-fontsize-desktop
+
+      @if $msg-alert-bg != none
+        padding: 15px
+
+      @else
+        .icon:not(.icon-close)
+          font-size: $alert-icon-fontsize-desktop

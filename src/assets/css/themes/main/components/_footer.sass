@@ -1,0 +1,32 @@
+.social-links-container
+  text-align: center
+  margin: 0 auto
+  display: table
+  table-layout: fixed 
+  width: 100%
+
+  li
+    display: table-cell
+    text-align: center
+
+  [class*="social-link-"]
+    display: block
+    padding: 15px
+
+  .icon
+    color: $brand-shade-7
+    font-size: 16px
+
+  .social-link-facebook
+    background: $social-color-1
+
+  .social-link-twitter
+    background: $social-color-2
+
+  .social-link-youtube
+    background: $social-color-3
+
+@media screen and (min-width: 391px)
+  
+  .footer-links .social-links-container
+    max-width: 390px

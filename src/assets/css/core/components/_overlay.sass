@@ -1,0 +1,85 @@
+.modal-overlay
+  background: $brand-shade-8
+  color: $brand-shade-1
+  bottom: 0
+  left: 0
+  min-width: 320px
+  overflow-y: scroll
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 10
+
+  @if $overlay-close-bg != inherit
+    .close-btn
+      background: $overlay-close-bg
+
+  @else
+    &:not(.dark-overlay) [class*='-btn']
+      color: $opacity-black-2
+  
+  [class*='-btn']
+    cursor: pointer
+    font-size: 0
+
+    .icon
+      font-size: $overlay-icon-fontsize
+
+  .modal-header
+    align-items: center
+    border-bottom: $overlay-header-border
+    display: flex
+    width: 100%
+
+    &, .back-btn + [class*='-heading']
+      padding: 0
+
+    [class*='-heading'],
+    [class*='-btn']
+      padding: $overlay-header-padding
+
+    .h2-heading
+      display: inline-flex
+      line-height: 16px
+      margin: auto 0
+
+    .close-btn
+      margin: 0 0 0 auto
+
+  .modal-body
+    padding: $overlay-body-padding
+    position: relative
+
+  .custom-field
+    margin-bottom: 20px
+
+  .full-width-ctas
+    margin-top: 20px
+
+    *:not(:first-child):not(:last-child)
+      margin: $overlay-cta-margin
+
+  .field-hint
+    display: inline-block
+    margin-top: 5px
+
+  .custom-link
+    font-size: inherit
+    text-decoration: none
+
+  &.dark-overlay
+    background: $overlay-bg
+
+    &, [class*='-heading']
+      color: $overlay-color
+
+    [class*='-btn'] .icon
+      opacity: 1
+
+  .modal-content
+    background: $overlay-content-bg
+    height: 100%
+    
+    &.modal-small
+      height: auto
+      max-width: 335px

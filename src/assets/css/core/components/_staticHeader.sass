@@ -1,0 +1,40 @@
+.navbar-static
+  background: $header-static-bg
+  overflow: hidden
+  display: flex
+
+  @if $header-static-close-bg != none
+    .close-btn
+      background: $header-static-close-bg
+
+  @if $header-static-label-transform != none
+    .header-label
+      font-weight: 600
+      text-transform: uppercase
+
+  &.modal-header,
+  .toggle-ctas,
+  .h2-heading
+    align-items: center
+
+  &, .h2-heading
+    color: $primary-cta-color
+
+  [class*='-btn']
+    font-size: 0
+    line-height: 1
+
+  &.modal-header
+
+    .custom-cta
+      margin: $header-static-cta-margin
+
+    .toggle-ctas
+      flex-grow: 1
+
+      &, .custom-link
+        display: none
+
+      .custom-link
+        font-size: inherit
+        margin: $header-static-link-margin

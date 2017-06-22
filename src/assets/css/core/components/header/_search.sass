@@ -1,0 +1,126 @@
+.navbar .search-games-form .search-form-container .search-text-input,
+.inner-search-results .search-result .game-info h3
+  font-size: $search-title-fontsize
+
+@if $search-bg != none
+  .navbar .search-games-form,
+  &.search-field-enabled .search-container
+    background: $search-bg
+
+.navbar .search-games-form,
+.inner-search-results .search-result
+  display: flex
+
+.navbar .search-games-form
+  flex: 0 1 100%
+  align-self: stretch
+
+  .search-form-container
+    -ms-flex-positive: 1
+    color: $primary-cta-color
+    flex-grow: 1
+    position: relative
+    
+    input::placeholder
+      color: $primary-cta-color
+      opacity: 0.4
+
+    .search-text-input
+      background: none
+      border: none
+      height: 100%
+      outline: none
+      position: absolute
+      width: 100%
+      z-index: 1
+
+  .clear-btn
+    color: $search-clear-icon-color
+    max-height: $header-height
+
+    .icon
+      font-size: 17px
+
+  .cancel-search
+    background: $search-cancel-color
+    color: $primary-cta-color
+    font-size: $brand-fontsize-2
+    padding: 12px
+
+&.search-field-enabled .search-results
+  background-color: $opacity-black-3
+  height: 100vh
+  overflow: scroll
+  position: relative
+  z-index: 10
+    
+.inner-search-results
+
+  @if $search-subtitle-fontsize-desktop == inherit
+    .search-result .game-info h4
+      text-transform: uppercase
+
+  @if $search-not-found-color != inherit
+    .not-found h3,
+    .icon-no-results
+      color: $search-not-found-color
+
+  &, .search-result,
+  .not-found .info-area
+    width: 100%
+
+  .search-result
+    background-color: $brand-shade-7
+
+    @if $search-play-button-display != none
+      .play-btn
+        border-left: $light-border-separator
+        color: $brand-shade-2
+        font-size: $brand-fontsize-1
+        padding: 15px 10px
+        position: static
+        text-align: center
+        text-transform: uppercase
+
+        .icon-search-play
+          color: $search-play-icon-color
+          font-size: $brand-icon-fontsize-3
+          padding-left: 10px
+          vertical-align: middle
+
+    &:not(.not-found)
+      border-top: $light-border-separator
+
+    .play-btn
+      display: $search-play-button-display
+
+    .game-info
+      padding-left: 8px
+      align-self: center
+      width: 100%
+
+      h4
+        color: $brand-shade-3
+        margin-top: 3px
+
+      .super-class
+        font-weight: 600
+
+    &.not-found
+      background: $search-not-found-bg
+      text-align: $search-results-align
+
+      .icon-no-results
+        font-size: $brand-icon-fontsize-4
+
+      .info-area
+        padding: $search-not-found-padding
+
+    &:not(.not-found) .info-area:hover
+      background-color: $search-result-hover-bg
+
+    .info-area
+      display: inherit
+      flex-grow: 2
+      padding: $search-result-padding
+      z-index: 1

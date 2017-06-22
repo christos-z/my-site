@@ -1,0 +1,59 @@
+.scrollable
+
+  .scroll-bar .thumb,
+  .viewport .overview
+    position: absolute
+
+  &, .viewport,
+  &.default-skin .scroll-bar
+    position: relative
+
+  &:focus
+    outline: 0
+
+  .viewport
+    overflow: hidden
+
+  &.default-skin .scroll-bar
+    background-color: $scroll-bg
+    display: none
+    float: right
+    height: 100%
+    margin-right: 10px
+    width: 6px
+    z-index: 1
+
+    .thumb,
+    &:hover .thumb
+      background-color: $scroll-thumb-bg
+
+    &.vertical
+      margin: 0 5px
+
+      .thumb
+        width: 100%
+        min-height: 10px
+
+.custom-progress
+  display: inline-block
+
+  &, .progress-bar
+    width: 100%
+
+  .progress-bar
+    background: $secondary-cta-hover-bg
+    border-radius: 1px
+    height: 4px
+
+  .progress-value
+    background: $custom-toggle-on-bg
+    font-size: 0
+    height: 100%
+    width: 0
+
+  .progress-nr
+    color: $custom-toggle-on-bg
+    display: block
+    font-size: $brand-fontsize-5
+    margin-top: 18px
+    text-align: right

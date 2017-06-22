@@ -1,0 +1,112 @@
+@if $thumbnail-radius != 0
+  .thumb-container
+    border-radius: $thumbnail-radius
+    box-shadow: $thumbnail-shadow
+
+.game-thumbnail
+  text-align: center
+  width: 21vw
+
+  @if $thumbnail-radius != 0
+    &.img-large .thumbnail-text
+      padding: 10px 0 0 3px
+      text-align: left
+
+    .img-game
+      border-radius: inherit
+  
+  &.img-large
+    min-width: $thumbnail-lg-min-width
+    max-width: $thumbnail-lg-max-width
+
+    @if $thumbnail-text-transform != inherit
+      .thumbnail-text
+        text-transform: $thumbnail-text-transform
+
+    .thumbnail-text
+      font-size: $thumbnail-lg-text-font-size
+
+    .custom-badge
+
+      &.primary
+        left: -7px
+        top: 15px  
+
+      &.secondary 
+        bottom: 47px
+
+  &, .img-placeholder
+    position: relative
+
+  &.img-small
+    min-width: $thumbnail-sm-min-width
+    max-width: $thumbnail-sm-max-width
+
+    @if $thumbnail-sm-container-height-width != inherit
+      .thumb-container,
+      .img-responsive
+        height: $thumbnail-sm-img-width-height
+        max-height: $thumbnail-sm-container-height-width
+
+      .thumb-container
+        max-width: $thumbnail-sm-container-height-width
+        min-height: $thumbnail-sm-container-min-height-width
+        min-width: $thumbnail-sm-container-min-height-width
+        width: $thumbnail-sm-img-width-height
+
+      .img-responsive
+        min-height: $thumbnail-sm-container-min-height-width
+        object-fit: $thumbnail-sm-img-object-fit
+
+    .custom-badge
+
+      &.primary
+        left: -10px
+        top: 10px  
+
+      &.secondary 
+        bottom: 40px     
+
+    .thumbnail-text
+      font-size: $thumbnail-sm-text-font-size
+      position: relative
+           
+  &.img-xsmall
+    height: $thumbnail-xs-height
+    max-width: $thumbnail-xs-width
+    
+    .img-responsive
+      min-height: $thumbnail-xs-height
+      object-fit: cover
+
+  .thumbnail-text
+    background: $thumbnail-text-bg
+    bottom: 0
+    color: $thumbnail-text-color
+    left: 0
+    line-height: $thumbnail-text-line-height
+    overflow: hidden
+    padding: $thumbnail-text-padding
+    position: $thumbnail-text-position
+    text-overflow: ellipsis
+    white-space: nowrap
+    width: 100%
+
+.thumb-container
+  overflow: hidden
+
+  .img-game,
+  .custom-badge
+    position: absolute
+
+  .img-responsive
+    z-index: -1
+
+  .img-game
+    top: 0
+
+  .custom-badge
+    z-index: 2
+
+    &.secondary
+      right: -6px     

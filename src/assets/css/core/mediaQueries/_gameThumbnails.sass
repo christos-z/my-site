@@ -1,0 +1,22 @@
+@media screen and (min-width: 769px)
+
+  .game-thumbnail
+
+    @if $thumbnail-xs-height-desktop != inherit
+      &.img-xsmall
+        height: $thumbnail-xs-height-desktop
+        max-width: 90px
+
+    &.img-large .thumbnail-text
+      font-size: $thumbnail-lg-fontsize-desktop
+
+    &.img-small .thumbnail-text
+      font-size: $thumbnail-sm-fontsize-desktop
+
+      @if $thumbnail-sm-caption-desktop != inherit
+        padding: $thumbnail-sm-caption-desktop
+
+@media screen and (max-width: 375px)
+
+  .game-thumbnail .play-btn .icon-search-play
+    font-size: $brand-icon-fontsize-3

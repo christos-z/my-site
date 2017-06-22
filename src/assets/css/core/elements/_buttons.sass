@@ -1,0 +1,98 @@
+button
+  @extend %reset-button
+
+.custom-cta
+  border: none
+  border-radius: $cta-radius
+  font: $brand-primary-font
+  line-height: 12px
+  min-width: 110px
+  outline: none
+  padding: 10px 20px
+  text-align: center
+  text-transform: uppercase
+
+  &, &:hover
+    text-decoration: none
+
+  &:not([disabled])
+    cursor: pointer
+
+  &.cta-large
+    font-size: $brand-fontsize-6
+    line-height: $cta-large-alignment
+    padding: $cta-large-padding
+
+  &.primary
+    background: $primary-cta-bg
+    box-shadow: $primary-cta-shadow
+    color: $primary-cta-color
+
+    &:hover,
+    &:active
+      background: $primary-cta-hover-bg
+
+    &[disabled]
+      background: $primary-cta-disabled-bg
+      color: $primary-cta-disabled-color
+      box-shadow: $primary-cta-disabled-shadow
+
+    @if $cta-large-shadow-prop != inherit
+      &.cta-large
+        box-shadow: $primary-large-cta-shadow
+
+        &[disabled]
+          box-shadow: $primary-large-cta-disabled-shadow
+
+  &.secondary
+    background: $secondary-cta-bg
+    box-shadow: $secondary-cta-shadow
+    color: $secondary-cta-color
+
+    &:hover,
+    &:active
+      background: $secondary-cta-hover-bg
+      color: $secondary-cta-color
+
+      &:not([disabled])
+        box-shadow: $secondary-cta-hover-shadow
+
+    @if $cta-large-shadow-prop != inherit
+
+      &.cta-large
+        box-shadow: $secondary-large-cta-shadow
+
+        &:hover:not(:active):not([disabled])
+          box-shadow: $secondary-large-cta-hover-shadow
+
+        &[disabled]
+          box-shadow: $secondary-large-cta-disabled-shadow
+
+    &[disabled]
+      background: $secondary-cta-disabled-bg
+      color: $secondary-cta-disabled-color
+
+      @if $secondary-cta-disabled-shadow != inherit
+        box-shadow: $secondary-cta-disabled-shadow
+
+  &.tertiary
+    background: transparent
+    box-shadow: $tertiary-cta-shadow
+    color: $tertiary-cta-color
+
+    &:hover,
+    &:active
+      box-shadow: $tertiary-cta-hover-shadow
+
+    &:active
+      @if $tertiary-cta-active-bg != inherit
+        background: $tertiary-cta-active-bg
+      color: $tertiary-cta-active-color
+
+    &[disabled]
+      box-shadow: $tertiary-cta-disabled-shadow
+      color: $tertiary-cta-disabled-color
+
+  @if $cta-active-shadow != inherit
+    &:hover:active:not([disabled])
+      box-shadow: $cta-active-shadow

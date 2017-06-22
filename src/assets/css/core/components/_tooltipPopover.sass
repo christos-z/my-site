@@ -1,0 +1,36 @@
+.tooltip-popover-container
+  display: inline-block
+  font: $brand-fontsize-2 $brand-secondary-font-family
+  line-height: $brand-fontsize-6
+  position: relative
+
+  .custom-link
+    font-size: inherit
+
+  .close-btn
+    align-self: flex-start
+    margin-left: 5px
+
+    .icon-close
+      font-size: $tooltip-icon-fontsize
+
+  .tooltip-toggle:hover + .tooltip-popover-msg,
+  .tooltip-popover-msg.tooltip-switch,
+  .popover-toggle.active + .tooltip-popover-msg
+    display: inline-flex
+
+  .tooltip-popover-msg
+    display: none
+    min-width: 250px
+
+    &.bottom
+      +custom-popover(top, 50%, calc(100% + 10px), 50%, bounce-down)
+
+    &.top
+      +custom-popover(bottom, 50%, -10px, 50%, bounce-up)
+
+    &.left
+      +custom-popover(right, -10px, 45%, -15px, bounce-right)
+
+    &.right
+      +custom-popover(left, calc(100% + 10px), 45%, -15px, bounce-left)

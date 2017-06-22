@@ -1,0 +1,80 @@
+.accordion
+  color: $custom-table-color
+
+  &.primary
+    background: $brand-shade-7
+    box-shadow: $accordion-shadow
+
+    .subject-heading
+      line-height: $accordion-list-height
+      padding: $accordion-list-padding
+      position: relative
+
+      @if $accordion-primary-active-bg != inherit
+        &.active,
+        &.active + .more-info
+          background: $accordion-primary-active-bg
+
+    li:not(:first-of-type)
+      box-shadow: $custom-table-shadow
+
+    .icon
+      font-size: $accordion-primary-icon-fontsize
+      position: absolute
+      right: 20px
+      top: 30%
+
+    .more-info
+      font-size: $brand-fontsize-4
+      padding: $accordion-content-padding
+
+      @if $accordion-extra-border != none
+        box-shadow: $custom-table-shadow
+
+      p
+        margin: $accordion-content-margin
+
+  &.secondary
+
+    .subject-heading
+      position: relative
+
+      &.active
+        padding-bottom: $accordion-secondary-header-padding
+
+    .more-info
+      font-size: $accordion-secondary-fontsize
+
+    .icon
+      color: $accordion-secondary-icon-color
+      font-size: $accordion-secondary-icon-fontsize
+      margin-left: 6px
+
+    &.inverse
+
+      .subject-heading > .icon
+        color: $accordion-inverse-icon-color
+
+      .title, .more-info p
+        color: $accordion-inverse-color
+
+  .subject-heading
+    cursor: pointer
+
+    .title
+      display: inline-block
+      text-transform: none
+      vertical-align: middle
+
+    .icon
+      color: $accordion-primary-icon-color
+
+  .more-info
+    line-height: 15px
+    max-height: 0
+    overflow: hidden
+    transition: none
+
+  .active + .more-info
+    max-height: 200px
+    transition: max-height 0.8s ease
