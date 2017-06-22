@@ -1,9 +1,14 @@
-.flip-vertical-fwd:hover
-	animation: flip-vertical-fwd 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+.flip-vertical-fwd
+  &:active
+    z-index: 20
+    animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+    -webkit-font-smoothing: subpixel-antialiased
 
-@keyframes flip-vertical-fwd 
-  0% 
-    transform: translateZ(0) rotateY(0)
-  
-  100% 
-    transform: translateZ(160px) rotateY(180deg)
+@keyframes flip-vertical-fwd
+  from
+    transform: rotateY(0) translate3d(0,0,0)
+  to
+    //filter: blur(0)
+    //-webkit-font-smoothing: antialiased
+
+    transform: translate3d(0px,0px,143px) rotateY(180deg)

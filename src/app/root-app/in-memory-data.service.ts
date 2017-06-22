@@ -43,7 +43,11 @@ export class InMemoryDataService implements InMemoryDbService {
       <path fill="#FFFFFF" d="M239.51,173.693"/>
       </g>
       </svg>`,
-        imgType: 'htmlSvg'
+        imgType: 'htmlSvg',
+        description: `<ul>
+  <li>I first started using javascript when I was around 10 years old</li>
+  <li>using alert('hello world'); I've used Javascript throughout my entire career,</li>
+</ul>`
       },
       {
         name: 'AngularJS (1 & 2)',
