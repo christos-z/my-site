@@ -1,8 +1,18 @@
 .flip-vertical-fwd
-  &:active
+  &:active, &.active
     z-index: 20
     animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
     -webkit-font-smoothing: subpixel-antialiased
+
+
+  .this
+    font-size: 12px
+    transform: rotateY(180deg) scale(0.5)
+    font-smoothing: antialiased
+    position: absolute
+    top: 0
+    width: 100%
+    backface-visibility: hidden
 
 @keyframes flip-vertical-fwd
   from
@@ -11,4 +21,4 @@
     //filter: blur(0)
     //-webkit-font-smoothing: antialiased
 
-    transform: translate3d(0px,0px,143px) rotateY(180deg)
+    transform: translatez(300px) rotateY(-180deg)

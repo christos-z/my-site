@@ -25,6 +25,8 @@ export class SkillService {
             if(skill.imgType === 'htmlSvg') {
               skill.img = this.sanitizer.bypassSecurityTrustUrl(`data:image/svg+xml;utf8,${skill.img}`);
             }
+            skill.description = this.sanitizer.bypassSecurityTrustHtml(`<h1 style="margin: auto">${skill.name}</h1>${skill.description}`);
+
             return skill
           })
         });

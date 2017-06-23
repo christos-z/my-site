@@ -1,68 +1,32 @@
-<!--<div-->
-  <!--style="-->
-    <!--display: flex;-->
-    <!--justify-content: center;-->
-    <!--align-items: center;-->
-    <!--padding: 0 0 0 290px;-->
-    <!--position: absolute;-->
-    <!--left: 0;-->
-    <!--top: 0;-->
-    <!--right: 0;-->
-    <!--bottom: 0;-->
-    <!--perspective: 500px;-->
-    <!--perspective-origin: calc(50% + 120px) 50%;-->
-<!--">-->
-  <!--<div class="anim-object active" id="card-object-vf"-->
-     <!--style="-->
-     <!--animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal both;-->
-    <!--width: 170px;-->
-    <!--height: 170px;-->
-    <!-- -webkit-transform-style: preserve-3d;-->
-    <!--transform-style: preserve-3d;-->
-    <!-- -webkit-backface-visibility: hidden;-->
-    <!--backface-visibility: hidden;-->
-    <!--display: block;-->
-    <!--z-index: 905;">-->
-  <!--<div class="front face"-->
-  <!--style="        background: #2dccb8;-->
-    <!--z-index: 20;position: absolute;-->
-    <!--width: 100%;-->
-    <!--height: 100%;-->
-    <!-- -webkit-backface-visibility: hidden;-->
-    <!--backface-visibility: hidden;-->
-    <!--border-radius: 10px;-->
-    <!--text-align: center;">-->
-    <!--<div class="text">A</div>-->
-  <!--</div>-->
-  <!--<div class="back face"-->
-  <!--style="        background: #53a3dc;-->
-    <!--z-index: 10;    -webkit-transform: rotateY(180deg);-->
-    <!--transform: rotateY(180deg);position: absolute;-->
-    <!--width: 100%;-->
-    <!--height: 100%;-->
-    <!-- -webkit-backface-visibility: hidden;-->
-    <!--backface-visibility: hidden;-->
-    <!--border-radius: 10px;-->
-    <!--text-align: center;">-->
-    <!--<div class="text">B</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--</div>-->
+//@TODO
+  Refactor All this inline styles into class
+  Create banners to symbolise skills with more than x years experience
+  remove all the nasty innerHTML stuff, instead loop through skills properly (will need to restructe the json object for this)
+  Add filters on skills
+  Create roles section
+  Create CV section
+  Inside role section show a progress bar on skills to display how much time I spent on the skills in that role
+  Create a personal project section.
+  Create tech tests section.
+  Create mongoDB and nodejs backend
+  improve design (obviously)
+
+  cool websites:
+  http://www.goslingo.com/
+  http://switcher.madeinebor.com/?theme=Other
+  http://animista.net/
+  http://bennettfeely.com/
 
 <div class="container">
   <section class="carousel tertiary" style="margin-left: 20px;">
     <div class="content-slider no-scroll desktop-carousel max-container" style="
-    /*padding: 0 0 0 10px;*/
     position: relative;
     left: 0;
     top: 100px;
     right: 0;
     bottom: 0;
-    perspective: 1000px;
-    /*perspective-origin: calc(50% + 120px) 50%;*/
-    max-width: 1360px;margin: auto;
-    /*filter: blur(0);*/
-">
+    perspective: 2000px;
+    max-width: 1360px;margin: auto;">
       <article *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd"
                style="  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -70,29 +34,17 @@
   backface-visibility: hidden;">
         <div
           style="position: relative;-webkit-backface-visibility: hidden;backface-visibility: hidden;    z-index: 20;">
-          <figure class="thumb-container" style="-webkit-font-smoothing: antialiased;">
+          <figure class="thumb-container" style="-webkit-font-smoothing: antialiased;background: lightgray;">
             <img [src]="skill.img" style="height: 200px;max-width: 100%;" class="img-responsive">
           </figure>
           <figcaption>{{skill.name}}</figcaption>
         </div>
-        <div
-          style="transform: rotateY(180deg); height:200px;-webkit-font-smoothing: antialiased;position: absolute;top: 0;width: 100%;-webkit-backface-visibility: hidden;backface-visibility: hidden;">
-          <figure class="thumb-container" style="height:100%" [innerHTML]="skill.description">
+        <div class="this">
+          <figure class="thumb-container" style="padding:15px;transform:scale(2);height:200px;background: lightgray;" [innerHTML]="skill.description">
+            {{skill.description}}
           </figure>
-          <!--<figcaption>{{skill.name}}-2</figcaption>-->
         </div>
       </article>
     </div>
   </section>
 </div>
-
-<!--<div class="container">
-  <div class="row">
-    <div *ngFor="let skill of skills; let i = index">
-      <div class="clearfix" *ngIf="i % 6 == 0"></div>
-      <div class="col-xs-2" style="height:100px">
-      <span style="text-align:center; display:block">{{skill.name}}</span>
-      <img style='width: 100%;height:100%; object-fit: contain'[src]="skill.img" />
-    </div>
-  </div>
-</div>-->
