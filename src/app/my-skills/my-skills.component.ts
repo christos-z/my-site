@@ -8,7 +8,7 @@ import { SkillService }         from 'services/skill.service';
   templateUrl: './my-skills.component.html',
   styleUrls: [
     './scss/main.sass',
-    './scss/animation.sass',
+    './scss/animation.scss',
     ]
 })
 
@@ -40,7 +40,7 @@ export class MySkillsComponent implements OnInit {
         .subscribe(skills => this.skills = skills)
   }
 
-  showSkill(index) {
+  setActiveSkill(index) {
     this.currentFlipContainer = this.flipContainer._results[index].nativeElement;
     this.currentFlipElement = this.flipElement._results[index].nativeElement;
 
@@ -51,7 +51,6 @@ export class MySkillsComponent implements OnInit {
     //We set the top and left position to the true positions found above, so when the skill animates to full screen, it will animate from the original position
     this.renderer.setStyle(this.currentFlipElement, 'top', this.topPos);
     this.renderer.setStyle(this.currentFlipElement, 'left', this.leftPos)
-
 
   }
 

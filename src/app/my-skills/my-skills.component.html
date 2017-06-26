@@ -24,10 +24,11 @@
     <div class="content-slider no-scroll" >
       <article #flipContainer *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd" href="#"
                 [ngClass]="{'flipped active': flippedIndex === i && isflipped }"
-               (click)="showSkill(i); flippedIndex = i; isflipped = !isflipped;">
+                (mouseover)="setActiveSkill(i)"
+                (click)="flippedIndex = i; isflipped = !isflipped;">
         <a #flipElement class="flip-element">
-          <div style="position: relative;-webkit-backface-visibility: hidden;backface-visibility: hidden; z-index: 20;">
-            <figure class="thumb-container" style="-webkit-font-smoothing: antialiased;background: lightgray;">
+          <div>
+            <figure class="thumb-container" style="background: lightgray;">
               <img [src]="skill.img" style="height: 200px;max-width: 100%;" class="img-responsive">
             </figure>
             <figcaption>{{skill.name}}</figcaption>
