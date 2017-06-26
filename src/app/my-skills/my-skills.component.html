@@ -22,21 +22,19 @@
 <div class="list-of-skills">
   <section class="carousel tertiary">
     <div class="content-slider no-scroll" >
-      <article #flipContainer *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd" href="#"
+      <article #flipContainer *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd"
                 [ngClass]="{'flipped active': flippedIndex === i && isflipped }"
                 (mouseover)="setActiveSkill(i)"
                 (click)="flippedIndex = i; isflipped = !isflipped;">
         <a #flipElement class="flip-element">
-          <div>
-            <figure class="thumb-container" style="background: lightgray;">
-              <img [src]="skill.img" style="height: 200px;max-width: 100%;" class="img-responsive">
+          <div class="skill-container">
+            <figure class="thumb-container">
+              <img [src]="skill.img" class="skill-image img-responsive">
+              <figcaption>{{skill.name}}</figcaption>
             </figure>
-            <figcaption>{{skill.name}}</figcaption>
           </div>
-          <div class="this">
-            <figure class="thumb-container" style="padding:15px;
-            transform:scale(2);
-            height:200px;background: lightgray;" [innerHTML]="skill.description">
+          <div class="skill-container flipped">
+            <figure class="thumb-container" [innerHTML]="skill.description">
             </figure>
           </div>
         </a>

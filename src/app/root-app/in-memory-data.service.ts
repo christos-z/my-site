@@ -92,7 +92,7 @@ export class InMemoryDataService implements InMemoryDbService {
         </ul>`
       },
       {
-        name: 'Bootstrap (2 & 3 & 4)',
+        name: 'Bootstrap (3 & 4)',
         img: '/assets/logos/bootstrap.svg',
         description: `
         <h1 style="margin: auto">OVER 7 YEARS EXPERIENCE.</h1>
@@ -279,7 +279,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         name: 'UnderscoreJs',
         img: '/assets/logos/underscore.png'
-      }, 
+      },
       {
         name: 'lodash',
         img: '/assets/logos/lodash.svg'
