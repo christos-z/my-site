@@ -9,7 +9,7 @@
     max-height: 195px
 
 @media screen and (min-width: 1024px)
-  
+
   @if $carousel-centered != true
     .carousel.tertiary .game-thumbnail
       flex-basis: calc(12.5% - 15px)
@@ -42,7 +42,7 @@
           justify-content: center
 
     &.tertiary
-      padding: 20px 0 0
+      padding: 0
 
       @if $carousel-centered != false
         .component-wrapper
@@ -81,12 +81,6 @@
         margin-left: auto
         overflow: visible
 
-        .game-thumbnail.img-large
-          flex-basis: calc(20% - 18px)
-          margin: 0 20px 20px 0
-
-          &:nth-of-type(5n)
-            margin: 0 0 20px
 
     &.primary,
     &.secondary

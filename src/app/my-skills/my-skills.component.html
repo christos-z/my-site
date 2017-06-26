@@ -16,34 +16,29 @@
   http://switcher.madeinebor.com/?theme=Other
   http://animista.net/
   http://bennettfeely.com/
+<!--<article #testingThisShit *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd" href="#"[ngClass]="{'flipped active': flippedIndex === i && isflipped }" (click)="showSkill(i)flippedIndex = i; isflipped = !isflipped;">-->
+<!--[ngClass]="{'flipped': flippedIndex === i && isflipped }"-->
 
-<div class="container">
-  <section class="carousel tertiary" style="margin-left: 20px;">
-    <div class="content-slider no-scroll desktop-carousel max-container" style="
-    position: relative;
-    left: 0;
-    top: 100px;
-    right: 0;
-    bottom: 0;
-    perspective: 2000px;
-    max-width: 1360px;margin: auto;">
-      <article *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd"
-               style="  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;">
-        <div
-          style="position: relative;-webkit-backface-visibility: hidden;backface-visibility: hidden;    z-index: 20;">
-          <figure class="thumb-container" style="-webkit-font-smoothing: antialiased;background: lightgray;">
-            <img [src]="skill.img" style="height: 200px;max-width: 100%;" class="img-responsive">
-          </figure>
-          <figcaption>{{skill.name}}</figcaption>
-        </div>
-        <div class="this">
-          <figure class="thumb-container" style="padding:15px;transform:scale(2);height:200px;background: lightgray;" [innerHTML]="skill.description">
-            {{skill.description}}
-          </figure>
-        </div>
+<div class="list-of-skills">
+  <section class="carousel tertiary">
+    <div class="content-slider no-scroll" >
+      <article #flipContainer *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd" href="#"
+                [ngClass]="{'flipped active': flippedIndex === i && isflipped }"
+               (click)="showSkill(i); flippedIndex = i; isflipped = !isflipped;">
+        <a #flipElement class="flip-element">
+          <div style="position: relative;-webkit-backface-visibility: hidden;backface-visibility: hidden; z-index: 20;">
+            <figure class="thumb-container" style="-webkit-font-smoothing: antialiased;background: lightgray;">
+              <img [src]="skill.img" style="height: 200px;max-width: 100%;" class="img-responsive">
+            </figure>
+            <figcaption>{{skill.name}}</figcaption>
+          </div>
+          <div class="this">
+            <figure class="thumb-container" style="padding:15px;
+            transform:scale(2);
+            height:200px;background: lightgray;" [innerHTML]="skill.description">
+            </figure>
+          </div>
+        </a>
       </article>
     </div>
   </section>

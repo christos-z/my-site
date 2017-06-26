@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit, ViewChildren, ElementRef, Renderer2} from '@angular/core';
 import { Skill }                from 'services/skill';
 import { SkillService }         from 'services/skill.service';
 
@@ -12,11 +11,25 @@ import { SkillService }         from 'services/skill.service';
     './scss/animation.sass',
     ]
 })
+
+
 export class MySkillsComponent implements OnInit {
+  //We need both the flip element and the flip container
+  @ViewChildren('flipElement') flipElement;
+  @ViewChildren('flipContainer') flipContainer;
 
   skills: Skill;
 
-  constructor(private sanitizer: DomSanitizer,
+  private topPos : String;
+  private leftPos : String;
+
+  private currentFlipContainer: any;
+  private currentFlipElement: any;
+
+  // private flippedIndex : number;
+
+  constructor(
+              private renderer: Renderer2,
               private skillService: SkillService) {
 
   }
@@ -24,7 +37,22 @@ export class MySkillsComponent implements OnInit {
   getSkills(): void {
     this.skillService
         .getSkills()
-        .subscribe(skills => this.skills = skills) 
+        .subscribe(skills => this.skills = skills)
+  }
+
+  showSkill(index) {
+    this.currentFlipContainer = this.flipContainer._results[index].nativeElement;
+    this.currentFlipElement = this.flipElement._results[index].nativeElement;
+
+    //Subtracting the flip containers position from the parent, gives us the true position of the element.
+    this.topPos = `${this.currentFlipContainer.getBoundingClientRect().top - this.currentFlipContainer.offsetParent.getBoundingClientRect().top}px`;
+    this.leftPos = `${this.currentFlipContainer.getBoundingClientRect().left - this.currentFlipContainer.offsetParent.getBoundingClientRect().left}px`;
+
+    //We set the top and left position to the true positions found above, so when the skill animates to full screen, it will animate from the original position
+    this.renderer.setStyle(this.currentFlipElement, 'top', this.topPos);
+    this.renderer.setStyle(this.currentFlipElement, 'left', this.leftPos)
+
+
   }
 
   ngOnInit() {

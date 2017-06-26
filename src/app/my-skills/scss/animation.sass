@@ -1,24 +1,50 @@
-.flip-vertical-fwd
-  &:active, &.active
-    z-index: 20
-    animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
-    -webkit-font-smoothing: subpixel-antialiased
+.list-of-skills
+  margin: 0 500px
+  .flip-vertical-fwd
 
+    .flip-element
+      display: block
+      transform-style: preserve-3d
 
-  .this
-    font-size: 12px
-    transform: rotateY(180deg) scale(0.5)
-    font-smoothing: antialiased
-    position: absolute
-    top: 0
-    width: 100%
-    backface-visibility: hidden
+    &:active, &:hover, &.active
+      .flip-element
+        width: 256px
+        height: 200px
+        animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both, backwards
+
+    &.flipped
+      min-width: 100%
+      position: absolute
+
+      .flip-element
+        transform: translatez(0) rotateY(-180deg)!important
+        transition: all 1s
+        width: 100%
+        height: 100%
+        position: fixed
+        top: 0!important
+        left: 0!important
+        z-index: 9999
+        .this
+          transition: height 1s
+          height: 100%
+          transform: rotateY(180deg)  scale(1) !important
+          .thumb-container
+            transition: all 1s
+            background: white!important
+            height: 100%!important
+            transform: scale(1) !important
+
+    .this
+      font-size: 12px
+      transform: rotateY(180deg) scale(0.5)
+      position: fixed
+      top: 0
+      width: 100%
+      backface-visibility: hidden
 
 @keyframes flip-vertical-fwd
   from
     transform: rotateY(0) translate3d(0,0,0)
   to
-    //filter: blur(0)
-    //-webkit-font-smoothing: antialiased
-
-    transform: translatez(300px) rotateY(-180deg)
+    transform: translatez(0px) rotateY(-180deg)
