@@ -5,7 +5,6 @@
 
 .game-thumbnail
   text-align: center
-  width: 21vw
 
   @if $thumbnail-radius != 0
     &.img-large .thumbnail-text
@@ -17,7 +16,7 @@
   
   &.img-large
     min-width: $thumbnail-lg-min-width
-    max-width: $thumbnail-lg-max-width
+    width: $thumbnail-lg-max-width
 
     @if $thumbnail-text-transform != inherit
       .thumbnail-text

@@ -8,6 +8,7 @@
       display: block;
       transform-style: preserve-3d;
       backface-visibility: hidden;
+      // width: inherit;
 
       .skill-container {
 
@@ -20,7 +21,7 @@
           backface-visibility: hidden;
 
           .thumb-container{
-            transform:scale(2);
+            transform: scale(2);
           }
         }
 
@@ -54,6 +55,8 @@
 
     &:active, &:hover, &.active{
       .flip-element {
+        width: inherit;
+        height: 200px;
         animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both, backwards;
 
         .thumb-container {
