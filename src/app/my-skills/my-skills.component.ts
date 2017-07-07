@@ -8,7 +8,8 @@ import { SkillService }         from 'services/skill.service';
   templateUrl: './my-skills.component.html',
   styleUrls: [
     './scss/main.sass',
-    './scss/animation.scss',
+    './scss/skills.scss',
+    './scss/cornerRibbons.scss',
     ]
 })
 
@@ -48,6 +49,8 @@ export class MySkillsComponent implements OnInit {
     this.topPos = `${this.currentFlipContainer.getBoundingClientRect().top - this.currentFlipContainer.offsetParent.getBoundingClientRect().top}px`;
     this.leftPos = `${this.currentFlipContainer.getBoundingClientRect().left - this.currentFlipContainer.offsetParent.getBoundingClientRect().left}px`;
 
+
+    console.log(this.topPos, this.leftPos);
     //We set the top and left position to the true positions found above, so when the skill animates to full screen, it will animate from the original position
     this.renderer.setStyle(this.currentFlipElement, 'top', this.topPos);
     this.renderer.setStyle(this.currentFlipElement, 'left', this.leftPos)

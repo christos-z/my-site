@@ -1,8 +1,9 @@
 .list-of-skills {
-  margin: 0 500px;
+  margin: auto;
 
-  .flip-vertical-fwd {
-    margin: 10px!important;
+  max-width: 1360px;
+
+  .skill-thumbnail {
 
     .flip-element {
       display: block;
@@ -26,28 +27,39 @@
         }
 
         .thumb-container {
+          background: #03051c;
           box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
-          background: #fafaff;
           border: 1px solid rgba(0, 0, 0, 0.5);
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
         }
 
-        .skill-image{
-          display: block;
-          margin: auto;
-          height: 200px;
+      .content{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      .skill-image{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          z-index: 9;
           max-width: 100%;
+          height: 100%;
+          padding: 50px 10px;
+          transform: translate(-50%,0);
         }
 
         figcaption {
-          font-size:28px;
-          margin: 2px;
-          background-color: #505050;
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          font-weight: 600;
-          text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+          font-size:25px;
+          padding-bottom:15px;
+          color: white;
+          text-align: center;
+          bottom: 0;
+          position: absolute;
+          width: 100%;
         }
       }
 
@@ -55,13 +67,10 @@
 
     &:active, &:hover, &.active{
       .flip-element {
-        width: inherit;
+        // width: inherit;
         height: 200px;
         animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both, backwards;
 
-        .thumb-container {
-          height: 240px;
-        }
       }
     }
 

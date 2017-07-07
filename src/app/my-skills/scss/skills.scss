@@ -1,0 +1,70 @@
+.list-of-skills {
+  margin: auto;
+  max-width: 1360px;
+  
+  .skill-card {
+  
+    &:hover > .flip-container{
+      animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both, backwards;
+    }
+
+    .flip-container {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;  
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+
+      .face {
+        background: #03051c;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+
+        &.back {
+          background: #53a3dc;
+          transform: rotateY(180deg);
+        }
+
+        .skill-image{
+          max-width: 100%;
+          height: 100%;
+          padding: 20px 10px 50px;
+        }
+
+        figcaption {
+          backface-visibility: hidden;
+          font-size:25px;
+          padding-bottom:15px;
+          color: white;
+          text-align: center;
+          bottom: 0;
+          position: absolute;
+          width: 100%;
+        }
+
+        .content {
+          padding: 20px;
+        }
+      }
+    } 
+  }
+}
+
+@keyframes flip-vertical-fwd {
+  from {
+    transform: rotateY(0) translate3d(0, 0, 0);
+  }
+  to {
+    transform: translatez(100px) rotateY(-180deg);
+  }
+}
+
+/*# sourceMappingURL=animation.scss.map */

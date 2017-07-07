@@ -3,8 +3,10 @@
     border-radius: $thumbnail-radius
     box-shadow: $thumbnail-shadow
 
-.game-thumbnail
+.skill-card
+  margin: 10px;
   text-align: center
+  width: calc(20% - 20px);
 
   @if $thumbnail-radius != 0
     &.img-large .thumbnail-text
@@ -14,9 +16,6 @@
     .img-game
       border-radius: inherit
   
-  &.img-large
-    min-width: $thumbnail-lg-min-width
-    width: $thumbnail-lg-max-width
 
     @if $thumbnail-text-transform != inherit
       .thumbnail-text

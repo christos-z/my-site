@@ -18,28 +18,27 @@
   http://switcher.madeinebor.com/?theme=Other
   http://animista.net/
   http://bennettfeely.com/
-<!--<article #testingThisShit *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd" href="#"[ngClass]="{'flipped active': flippedIndex === i && isflipped }" (click)="showSkill(i)flippedIndex = i; isflipped = !isflipped;">-->
-<!--[ngClass]="{'flipped': flippedIndex === i && isflipped }"-->
 
 <div class="list-of-skills">
   <section class="carousel tertiary">
     <div class="content-slider no-scroll" >
-      <article #flipContainer *ngFor="let skill of skills; let i = index" class="game-thumbnail img-large flip-vertical-fwd"
-                [ngClass]="{'flipped active': flippedIndex === i && isflipped }"
-                (mouseover)="setActiveSkill(i)"
-                (click)="flippedIndex = i; isflipped = !isflipped;">
-        <a #flipElement class="flip-element">
-          <div class="skill-container">
-            <figure class="thumb-container">
-              <img [src]="skill.img" class="skill-image img-responsive">
+      <article #flipContainer *ngFor="let skill of skills; let i = index" class="skill-card" [ngClass]="{'flipped active': flippedIndex === i && isflipped }" (click)="flippedIndex = i; isflipped = !isflipped;">
+          <div #flipElement class="flip-container">
+            <figure class="front face">
+              <div *ngIf="skill.experienceYears >= 5" class="ribbon ribbon-top-right"><span>{{skill.experienceYears}} Years expereince</span></div>
+              <img [src]="skill.img" class="skill-image">
               <figcaption>{{skill.name}}</figcaption>
             </figure>
-          </div>
-          <div class="skill-container flipped">
-            <figure class="thumb-container" [innerHTML]="skill.description">
+            <figure class="back face">
+              <div class="content">
+                <h1 style="margin: auto">OVER {{skill.experienceYears}} YEARS EXPERIENCE.*</h1>
+                <p style="line-height:1">Used at:</p>
+                <ul style="text-align:left;list-style: circle;padding: 10px;">
+                  <li *ngFor="let placesUsed of skill.placesUsed;">{{placesUsed}}</li>
+                </ul>
+              </div>
             </figure>
-          </div>
-        </a>
+        </div>
       </article>
     </div>
   </section>
