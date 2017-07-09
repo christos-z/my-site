@@ -6,11 +6,7 @@ import { SkillService }         from 'services/skill.service';
   selector: 'my-skills',
   providers: [SkillService],
   templateUrl: './my-skills.component.html',
-  styleUrls: [
-    './scss/main.sass',
-    './scss/skills.scss',
-    './scss/cornerRibbons.scss',
-    ]
+  styleUrls: ['./css/my-skills.scss']
 })
 
 

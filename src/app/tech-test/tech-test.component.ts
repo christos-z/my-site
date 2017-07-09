@@ -1,30 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Hero }                from 'services/hero';
-import { HeroService }         from 'services/hero.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tech-test',
-  providers: [HeroService],
   templateUrl: './tech-test.component.html',
   styleUrls: ['./scss/bootstrap.scss']
 })
-export class TechTestComponent implements OnInit {
-  heroes: Hero[];
-  selectedHero: Hero;
-
-  constructor(
-    private heroService: HeroService
-    ) { }
-
-  getHeroes(): void {
-    this.heroService
-        .getHeroes()
-        .then(heroes => this.heroes = heroes);
-  }
-
-  ngOnInit() {
-    this.getHeroes();
-  }
+export class TechTestComponent {
 
 }

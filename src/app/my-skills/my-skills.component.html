@@ -1,31 +1,10 @@
-//@TODO
-  FIX ANIMATION!
-
-  Refactor All this inline styles into class
-  Create banners to symbolise skills with more than x years experience
-  remove all the nasty innerHTML stuff, instead loop through skills properly (will need to restructe the json object for this)
-  Add filters on skills
-  Create roles section
-  Create CV section
-  Inside role section show a progress bar on skills to display how much time I spent on the skills in that role
-  Create a personal project section.
-  Create tech tests section.
-  Create mongoDB and nodejs backend
-  improve design (obviously)
-
-  cool websites:
-  http://www.goslingo.com/
-  http://switcher.madeinebor.com/?theme=Other
-  http://animista.net/
-  http://bennettfeely.com/
-
 <div class="list-of-skills">
   <section class="carousel tertiary">
     <div class="content-slider no-scroll" >
       <article #flipContainer *ngFor="let skill of skills; let i = index" class="skill-card" [ngClass]="{'flipped active': flippedIndex === i && isflipped }" (click)="flippedIndex = i; isflipped = !isflipped;">
           <div #flipElement class="flip-container">
             <figure class="front face">
-              <div *ngIf="skill.experienceYears >= 5" class="ribbon ribbon-top-right"><span>{{skill.experienceYears}} Years expereince</span></div>
+              <div *ngIf="skill.experienceYears >= 2" class="ribbon ribbon-top-right" [ngClass]="skill.rank"><span>{{skill.experienceYears}} Years expereince</span></div>
               <img [src]="skill.img" class="skill-image">
               <figcaption>{{skill.name}}</figcaption>
             </figure>

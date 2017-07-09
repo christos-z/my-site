@@ -1,7 +1,11 @@
-.navbar-fixed-top
+.main-navbar-container
+  left: 0
+  top: 0
+  position: fixed
+  right: 0
+  z-index: 7
   height: $header-height
   min-width: 320px
-  z-index: 2
 
   @if $header-border != none
     box-shadow: $header-border
@@ -17,24 +21,14 @@
   @import 'header/search'
 
   .navbar
+    max-width: 1360px
     border: 0
     border-radius: 0
     justify-content: center
     margin: 0 auto
     top: 0
 
-    @if $header-search-icon-fontsize != inherit
-      .icon.icon-search
-        font-size: $header-search-icon-fontsize
-        line-height: 17px
 
-    @if $header-language-padding != none
-      .lang-selector
-        padding: $header-language-padding
-
-    &, .deposit,
-    .user-menu-cta
-      color: $primary-cta-color
 
     .custom-cta.deposit,
     .login-container
@@ -44,17 +38,13 @@
       display: flex
       align-items: center
 
-    .deposit,
-    .user-menu-cta
-      text-decoration: none
-
     .search-container,
     .user-info
       display: inline-flex
       flex-grow: 1.2
       max-height: $header-height
 
-    .search-container      
+    .search-container
       justify-content: flex-start
 
     .user-info
@@ -81,16 +71,5 @@
     .icon
       font-size: $header-icon-fontsize
 
-    .brand-logo
-      margin: auto -1px
-      height: $header-logo-height
-      max-width: 100%
-
-      img
-        height: 100%
-
     .account-balance .user-btn
       padding: 12px 12px 12px 6px
-
-.navbar-top-visible
-  margin-top: $header-height

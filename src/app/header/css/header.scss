@@ -1,0 +1,14 @@
+$assetsPath: '/../../../assets/css/assets';
+
+  //Utilities
+@import '../../../assets/css/core/utilities';
+@import '../../../assets/css/themes/main/utilities';
+
+  //Elements
+@import '../../../assets/css/core/elements/buttons';
+@import '../../../assets/css/core/components/stickyHeader';
+@import '../../../assets/css/core/mediaQueries/stickyHeader';
+
+:host {
+  font-family: $brand-primary-font-family;
+}

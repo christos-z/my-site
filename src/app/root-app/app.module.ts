@@ -10,6 +10,8 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TechTestComponent } from 'app/tech-test/tech-test.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
+import { HeaderComponent }    from 'app/header/header.component';
+import {AboutMeComponent} from "../about-me/about-me.component";
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
   declarations: [
     AppComponent,
     TechTestComponent,
-    MySkillsComponent
+    AboutMeComponent,
+    MySkillsComponent,
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

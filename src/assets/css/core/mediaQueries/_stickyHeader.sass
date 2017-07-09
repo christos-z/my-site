@@ -1,7 +1,7 @@
 @media screen and (min-width: 1360px)
 
   @if $brand-logo-bg == transparent
-    .navbar-fixed-top
+    .main-navbar-container
       +mask-background($header-bg, $header-height-desktop)
 
     .search-field-enabled
@@ -12,12 +12,12 @@
 
 @media screen and (min-width: 990px)
 
-  .navbar-fixed-top .navbar .search-container
+  .main-navbar-container .navbar .search-container
     flex-grow: 1.5
 
 @media screen and (min-width: 769px)
 
-  .navbar-fixed-top
+  .main-navbar-container
     height: initial
 
     .navbar
@@ -49,7 +49,7 @@
 
       .custom-cta.deposit,
       .login-container
-        align-self: center 
+        align-self: center
         display: inline-flex
 
       .user-info

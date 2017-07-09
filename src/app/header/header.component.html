@@ -1,0 +1,38 @@
+<div class="main-navbar-container">
+  <nav class="navbar max-container">
+    <aside class="search-container">
+      <button type="button" class="menu-btn">
+        <i class="icon icon-menu"></i>Menu
+      </button>
+      <button class="user-btn" type="button">
+        <i class="icon icon-user"></i>
+        About Me
+      </button>
+      <button type="button" class="search-btn">
+        <i class="icon icon-search"></i>Search
+      </button>
+    </aside>
+    <a routerLink="/" style="    font-family: 'Audiowide', cursive!important;
+    font-size: 30px;
+    color: #03051c;
+    height: 40px;">
+      My Portfolio
+    </a>
+    <aside class="user-info">
+      <div class="login-container">
+        <a routerLink="/skills" role="button" class="custom-cta primary">Skills</a>
+        <a routerLink="/tech-test" role="button" class="custom-cta secondary">Tech Tests</a>
+      </div>
+    </aside>
+    <form name="searchGamesForm" class="search-games-form hidden">
+      <div class="search-form-container">
+        <input id="search-text-input" class="search-text-input" autocomplete="off" placeholder="Game Title">
+      </div>
+      <button class="clear-btn hidden">Clear
+        <i class="icon icon-delete-text"></i>
+      </button>
+      <button role="button" class="cancel-search">Cancel</button>
+    </form>
+  </nav>
+  <div id="search-results" class="search-results"></div>
+</div>

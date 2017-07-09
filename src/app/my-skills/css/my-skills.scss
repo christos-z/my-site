@@ -1,0 +1,18 @@
+$assetsPath: '/../../../assets/css/assets';
+
+
+//Utilities
+@import '../../../assets/css/core/utilities';
+@import '../../../assets/css/themes/main/utilities';
+
+//Elements
+@import '../../../assets/css/core/elements/skillCards';
+@import '../../../assets/css/core/elements/cornerRibbons';
+@import '../../../assets/css/core/components/carousels';
+@import '../../../assets/css/core/mediaQueries';
+
+
+:host {
+  font-family: 'roboto';
+  font-weight: 100;
+}

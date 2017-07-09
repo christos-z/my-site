@@ -1,0 +1,95 @@
+/* common */
+.ribbon {
+  transform-style: preserve-3d;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  &:before,
+  &:after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #2980b9;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: #fff;
+    font: 700 12px/1 'Lato', sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &.bronze {
+    &:before,
+    &:after {
+      border: 5px solid darken(#CD7f32 , 20%);
+    }
+    span {
+      background-color: #CD7f32 ;
+    }
+  }
+
+  &.silver {
+    &:before,
+    &:after {
+      border: 5px solid darken(#c0c0c0, 20%);
+    }
+    span {
+      background-color: #c0c0c0;
+    }
+  }
+
+  &.gold {
+    &:before,
+    &:after {
+      border: 5px solid darken(#D4AF37, 20%);
+    }
+    span {
+      background-color: #FFD700;
+    }
+  }
+
+
+  &.platinum {
+    &:before,
+    &:after {
+      border: 5px solid darken(#e5e4e2, 20%);
+    }
+    span {
+      background-color: #e5e4e2;
+    }
+  }
+
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+  &:before,
+  &:after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+  &:before {
+    top: 0;
+    left: 4px;
+  }
+  &::after {
+    bottom: 4px;
+    right: 0;
+  }
+  span {
+    left: -20px;
+    top: 37px;
+    transform: rotate(45deg);
+  }
+}
