@@ -1,10 +1,9 @@
-import { Component, } from '@angular/core';
-import { SkillService }         from 'services/skill.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'about-me',
   templateUrl: './about-me.component.html',
-  styleUrls: ['./css/about-me.scss']
+  styleUrls: ['./scss/about-me.scss']
 })
 
 

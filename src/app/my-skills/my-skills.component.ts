@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChildren, ElementRef, Renderer2} from '@angular/core';
-import { Skill }                from 'services/skill';
-import { SkillService }         from 'services/skill.service';
+import { Skill }                from 'services/skills/skill';
+import { SkillService }         from 'services/skills/skill.service';
 
 @Component({
   selector: 'my-skills',
@@ -22,8 +22,6 @@ export class MySkillsComponent implements OnInit {
 
   private currentFlipContainer: any;
   private currentFlipElement: any;
-
-  // private flippedIndex : number;
 
   constructor(
               private renderer: Renderer2,
