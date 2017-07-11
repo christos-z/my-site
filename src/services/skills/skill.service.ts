@@ -1,40 +1,52 @@
 import {Injectable}    from '@angular/core';
-import {Headers, Http} from '@angular/http';
+import {Http} from '@angular/http';
 
 import {Observable}        from 'rxjs/Observable';
 
+import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 import {Skill} from './skill';
 
 @Injectable()
 export class SkillService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
   private skillsUrl = 'api/skills';
-
-  constructor(private http: Http) {
+  
+  private sort = {
+    sort: "experienceYears",
+    by: "desc"
   }
 
-  getSkills(): Observable<Skill> {
+  constructor(private http: Http) {}
+
+
+  getSkills(): Observable<Skill[]> {
     return this.http.get(this.skillsUrl)
-      .map(response => response.json().data)
-      .map((skills) => {
-        return skills.map(skill => {
 
-          if (skill.experienceYears >= 15) {
-            skill.rank = 'platinum'
-          } else if (skill.experienceYears >= 10) {
-            skill.rank = 'gold'
+    .map(response => <Skill[]>response.json().data as Skill[])
 
-          } else if (skill.experienceYears >= 5) {
-            skill.rank = 'silver'
-          } else {
-            skill.rank = 'bronze'
-          }
+    
+    .map( (skills) => {
+      
+      return skills.map(skill => {
 
-            return skill
-        })
-      });
+        // skill.thisWillFail = 'this will fail';
+
+        if (skill.experienceYears >= 15) {
+          skill.rank = 'platinum'
+        } else if (skill.experienceYears >= 10) {
+          skill.rank = 'gold'
+        } else if (skill.experienceYears >= 5) {
+          skill.rank = 'silver'
+        } else {
+          skill.rank = 'bronze'
+        }
+
+        
+        return skill
+      })
+    });
   }
 }
