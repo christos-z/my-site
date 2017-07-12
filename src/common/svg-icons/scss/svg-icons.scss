@@ -1,0 +1,148 @@
+  .tea {
+    animation-delay: 1s;
+    min-width: 70px;
+    flex-basis: 12.5%;
+    animation: teaBounce 1.5s;
+
+    &:nth-of-type(2) {
+      animation-delay: 1s;
+      .liquid {
+        animation-delay: 1s;
+      }
+      .steam {
+        animation-delay: 4.3s;
+      }
+    }
+    &:nth-of-type(3) {
+      animation-delay: 2s;
+      .liquid {
+        animation-delay: 2s;
+      }
+      .steam {
+        animation-delay: 5.3s;
+      }
+    }
+    &:nth-of-type(4) {
+      animation-delay: 3s;
+      .liquid {
+        animation-delay: 3s;
+      }
+      .steam {
+        animation-delay: 6.3s;
+      }
+    }
+    &:nth-of-type(5) {
+      animation-delay: 4s;
+      .liquid {
+        animation-delay: 4s;
+      }
+      .steam {
+        animation-delay: 7.3s;
+      }
+    }
+    &:nth-of-type(6) {
+      animation-delay: 5s;
+      .liquid {
+        animation-delay: 5s;
+      }
+      .steam {
+        animation-delay: 8.3s;
+      }
+    }
+    &:nth-child(7) {
+      animation-delay: 6s;
+      .liquid {
+        animation-delay: 6s;
+      }
+      .steam {
+        animation-delay: 9.3s;
+      }
+    }
+    &:nth-child(8) {
+      animation-delay: 7s;
+      .liquid {
+        animation-delay: 7s;
+      }
+      .steam {
+        animation-delay: 10.3s;
+      }
+    }
+    &:nth-child(9) {
+      animation-delay: 8s;
+      .liquid {
+        animation-delay: 8s;
+      }
+      .steam {
+        animation-delay: 11.3s;
+      }
+    }
+  }
+
+  /* ANIMATE LIQUID FILL */
+  .liquid {
+    transform: translateY(100%);
+    opacity: 0.5;
+    animation: fill 3.2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fill {
+    0% {
+      opacity: 0.5;
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* ANIMATE STEAM */
+  .steam {
+    stroke: #F7F7F7;
+    stroke-width: 1.5px;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    opacity: 0.2;
+    animation: steamAnimate 2.5s;
+    animation-delay: 3.3s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes steamAnimate {
+    0% {
+      stroke-dashoffset: 200;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes teaBounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+/* Game GUI stuff */
+
+#path {
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  animation: dash 2s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    //stroke-dashoffset: 100;
+    stroke-dashoffset: 0;
+  }
+}

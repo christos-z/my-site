@@ -1,10 +1,10 @@
 /* common */
 .ribbon {
-  transform-style: preserve-3d;
   width: 150px;
   height: 150px;
   overflow: hidden;
   position: absolute;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
   &:before,
   &:after {
@@ -16,6 +16,7 @@
   }
 
   span {
+    backface-visibility: hidden;   
     position: absolute;
     display: block;
     width: 225px;

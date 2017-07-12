@@ -6,12 +6,18 @@ import { HttpModule }    from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+//App module and routing
 import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//App components imports
 import { TechTestComponent } from 'app/tech-test/tech-test.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
-import { HeaderComponent }    from 'app/header/header.component';
-import {AboutMeComponent} from "../about-me/about-me.component";
+import { AboutMeComponent } from "app/about-me/about-me.component";
+
+//Common Imports
+import { HeaderComponent }    from 'common/header/header.component';
+import { SvgIconsComponent } from "common/svg-icons/svg-icons.component";
 
 @NgModule({
   imports: [
@@ -25,6 +31,7 @@ import {AboutMeComponent} from "../about-me/about-me.component";
     TechTestComponent,
     AboutMeComponent,
     MySkillsComponent,
+    SvgIconsComponent,
     HeaderComponent
   ],
   providers: [],

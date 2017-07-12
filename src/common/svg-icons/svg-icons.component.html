@@ -1,0 +1,72 @@
+<ng-container *ngFor="let number of [0,1,2,3,4,5,6,7]">
+  <ng-container *ngIf="icon === 'tea'">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="140 70 210 325" class="tea">
+      <defs>
+        <mask id="liquidMasked">
+          <path fill="#FFF" d="M294.3,377.1c-32.8,9.4-68.2,9.3-101-0.2c-7.1-60.7-14.1-119.7-21.5-175.6c48.3,0,96.5,0,144.8,0 C309,257.2,301.7,316.3,294.3,377.1z"/>
+        </mask>
+      </defs>
+      <rect x="0.5" y="0.5" class="bg" width="500" height="500" fill="none"/>
+      <path class="cup" fill="#FFFFFF" d="M301.4,382.2c-37.4,10.4-77.9,10.3-115.2-0.3c-8.1-66.7-16.1-131.6-24.5-193c55.1,0,110.1,0,165.2,0 C318.1,250.3,309.8,315.3,301.4,382.2z"/>
+      <g id="coffeeMasked" mask="url(#liquidMasked)">
+        <path class="liquid" fill="#663300" stroke-width="2px" stroke="#663300" stroke-miterlimit="10" d="M293.8,376.6c-32.8,9.4-68.2,9.3-101-0.2c-7.1-60.7-14.1-119.7-21.5-175.6c0,0,12-7.1,31.3-0.4 c29.8,10.3,32.7-0.2,48.7-0.2c27.4,0,29.2,8.8,44.7,1.3c14.7-7.1,20.2-0.7,20.2-0.7C308.5,256.7,301.2,315.8,293.8,376.6z"/>
+      </g>
+      <g class="steam" stroke="#FFF" fill="none" stroke-width="2px">
+        <path d="M308.5,169c0,0-16.5-17-13-32.5s22-5.5,13.5,6c-7.9,10.6-23.8-6.9-12-21.8c11.5-14.5,10.7-22,10-24.8 c-5-18.4-18.6-5.8-12.6-1.1c9.4,7.1,15.2-16.5,13.2-24.5"/>
+      </g>
+      <path class="sleeve" fill="#821200" d="M310.2,334.2c-44,5.4-88.4,5.4-132.4,0c-3.2-27.8-6.4-55.7-9.6-83.6c50.4,7.2,101.6,7.2,152,0 C316.9,278.4,313.5,306.3,310.2,334.2z"/>
+      <path class="lid" fill="#821200" d="M337.2,187v13.8c0,0-15.8,3.7-92,3.7s-92-3.7-92-3.7V187c0-1.8,1.4-3.2,3.2-3.2h5.8v-11.5 c0-3.6,2.9-6.5,6.5-6.5h131.8l3.4,2.2c1.1,0.7,2.5,0.7,3.7,0l3.7-2.2h10.9c3.3,0,6.1,2.7,6.1,6.1v11.9h5.8 C335.8,183.8,337.2,185.2,337.2,187z"/>
+    </svg>
+  </ng-container>
+</ng-container>
+
+<!--Need to decide if I'm going to keep or remove this..-->
+<!--<div>
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="250 140 220 220">
+<defs>
+<linearGradient id="manaBar" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="20%" stop-color="goldenrod"></stop>
+<stop offset="20%" stop-color="black"></stop>
+<stop offset="50%" stop-color="blue"></stop>
+<stop offset="80%" stop-color="black"></stop>
+<stop offset="80%" stop-color="goldenrod"></stop>
+</linearGradient>
+
+<linearGradient id="manaBar2" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="20%" stop-color="goldenrod"></stop>
+<stop offset="20%" stop-color="black"></stop>
+<stop offset="50%" stop-color="green"></stop>
+<stop offset="80%" stop-color="black"></stop>
+<stop offset="80%" stop-color="goldenrod"></stop>
+</linearGradient>
+
+<radialGradient id="grad1" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
+<stop offset="45%" stop-color="gold"></stop>
+<stop offset="46%" stop-color="goldenrod"></stop>
+<stop offset="47%" stop-color="gold"></stop>
+<stop offset="48%" stop-color="darkred"></stop>
+<stop offset="50%" stop-color="red"></stop>
+<stop offset="52%" stop-color="darkred"></stop>
+<stop offset="53%" stop-color="gold"></stop>
+<stop offset="54%" stop-color="goldenrod"></stop>
+<stop offset="55%" stop-color="gold"></stop>
+</radialGradient>
+<radialGradient id="grad2" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
+<stop offset="45%" stop-color="gold"></stop>
+<stop offset="46%" stop-color="goldenrod"></stop>
+<stop offset="47%" stop-color="gold"></stop>
+<stop offset="48%" stop-color="black"></stop>
+<stop offset="50%" stop-color="black"></stop>
+<stop offset="52%" stop-color="black"></stop>
+<stop offset="53%" stop-color="gold"></stop>
+<stop offset="54%" stop-color="goldenrod"></stop>
+<stop offset="55%" stop-color="gold"></stop>
+</radialGradient>
+</defs>
+<rect x="340" y="285" width="300" height="20" fill="url(#manaBar2)" />
+<rect x="330" y="300" width="300" height="20" fill="url(#manaBar)" />
+<circle cx="250" cy="250" r="100" stroke="url(#grad2)" stroke-dasharray="628" stroke-linecap="round"stroke-width="15" fill="transparent"></circle>
+
+<circle id="path" cx="250" cy="250" r="100" stroke="url(#grad1)" stroke-width="15" fill="transparent"></circle>
+</svg>
+</div>-->

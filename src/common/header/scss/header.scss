@@ -11,4 +11,11 @@ $assetsPath: '/../../../assets/css/assets';
 
 :host {
   font-family: $brand-primary-font-family;
+
+  .logo {
+    font-family: 'Audiowide';
+    font-size: 30px;
+    color: #03051c;
+    height: 40px
+  }
 }

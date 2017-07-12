@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./scss/about-me.scss']
 })
 
-
 export class AboutMeComponent {}
