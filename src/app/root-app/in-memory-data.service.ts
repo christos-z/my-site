@@ -1,7 +1,6 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    //Put sorting on this, so can filter via technologies, alphabetical etc.
     const skills = [
       {
         name: 'Javascript',
