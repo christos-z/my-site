@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChildren, ElementRef, Renderer2} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Skill } from 'services/skills/skill';
 import { SkillService } from 'services/skills/skill.service';
 
 
-import { Observable }        from 'rxjs/Observable';
-import { BehaviorSubject }           from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 // Observable class extensions
 import 'rxjs/add/observable/of';
@@ -27,78 +27,56 @@ import 'rxjs/add/operator/filter';
 
 export class MySkillsComponent implements OnInit {
   
+  private filteredSkills: Observable<Skill[]>;
+  private skills: Observable<Skill[]>;
   
-  //We need both the flip element and the flip container
-  @ViewChildren('flipElement') flipElement;
-  @ViewChildren('flipContainer') flipContainer;
+  private searchTerms = new BehaviorSubject<string>('');
+   
+  constructor(private skillService: SkillService) {}
   
-  skills: Observable<Skill[]>;
-  listOfSkills
-  listOfSkills2: Observable<Skill[]>;
-  private searchTerms = new BehaviorSubject<string>("");
-  
-  private topPos : String;
-  private leftPos : String;
-  
-  private currentFlipContainer: any;
-  private currentFlipElement: any;
-  
-  constructor(private renderer: Renderer2, private skillService: SkillService) {}
-  
-  getSkills(): void {
-    // this.skillService.getSkills().subscribe( skills => {
-      //   return this.skills = skills 
-      // });
-      
-      this.listOfSkills = this.skillService.getSkills();
-      
-    }
-    
-    setActiveSkill(index) {
-      this.currentFlipContainer = this.flipContainer._results[index].nativeElement;
-      this.currentFlipElement = this.flipElement._results[index].nativeElement;
-      
-      //Subtracting the flip containers position from the parent, gives us the true position of the element.
-      this.topPos = `${this.currentFlipContainer.getBoundingClientRect().top - this.currentFlipContainer.offsetParent.getBoundingClientRect().top}px`;
-      this.leftPos = `${this.currentFlipContainer.getBoundingClientRect().left - this.currentFlipContainer.offsetParent.getBoundingClientRect().left}px`;
-      
-      //We set the top and left position to the true positions found above, so when the skill animates to full screen, it will animate from the original position
-      this.renderer.setStyle(this.currentFlipElement, 'top', this.topPos);
-      this.renderer.setStyle(this.currentFlipElement, 'left', this.leftPos)
-      
-    }
-    // Push a search term into the observable stream.
-    search(term: string): void {
-      this.searchTerms.next(term);     
-    }
-    
-    ngOnInit(): void {
-      this.getSkills();
-      
-      this.skills = this.searchTerms
-      .debounceTime(300)        
-      .distinctUntilChanged()   
-      .switchMap( term => {
-        
-        this.listOfSkills.subscribe( skill => {
-          return <Skill> new Skill(skill)
-        })
-        
-        return term.length === 0   
-        
-        ? this.listOfSkills
-        
-        //This should apply the filter.
-        : []
-        
-      } )
-      .catch(error => {
-        // TODO: add real error handling
-        console.log(error);
-        return Observable.of<Skill[]>([]);
-      });
-      
-    }
-    
+  // Retrieve the list of skills from the API (run on ngInit)
+  getSkills(): void {   
+    this.skills = this.skillService.getSkills();
   }
   
+  // Push a search term into the observable stream.
+  search(term: string): void {
+    this.searchTerms.next(term);     
+  }
+  
+  filterSkills(): void {
+    
+    this.filteredSkills = this.searchTerms
+    .debounceTime(300)        
+    .distinctUntilChanged()   
+    .switchMap( term => {
+
+      // If there is no search value, we return the entire skill list
+      return term.length === 0   
+      
+      ? this.skills
+
+      // Otherwise we filter the skills
+      : this.skills
+      .map( (skills) => {
+        return skills.filter(skill => {
+          if(!skill.name.toLowerCase().indexOf(term.toLowerCase())) {
+            return <Skill> new Skill(skill)
+          }
+        })
+      })
+    } )
+    .catch(error => {
+      // TODO: add real error handling
+      console.log(error);
+      return Observable.of<Skill[]>([]);
+    });
+  }
+  
+  ngOnInit(): void {
+    
+    this.getSkills();
+    this.filterSkills()
+    
+  }
+}

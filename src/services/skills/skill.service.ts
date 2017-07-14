@@ -3,19 +3,17 @@ import {Http} from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
 
-import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-// Observable class extensions
-import 'rxjs/add/observable/of';
 
 import {Skill} from './skill';
 
 @Injectable()
 export class SkillService {
   
+  // Define the API endpoint url
   private skillsUrl = 'api/skills';
   
+  // Default sort object.
   private sort = {
     sort: "experienceYears",
     by: "desc"
@@ -25,45 +23,24 @@ export class SkillService {
   
   getSkills(): Observable<Skill[]> {
 
+    // Grab the skills from the API endpoint.
     return this.http.get(this.skillsUrl)
     
-    .map(response => <Skill[]>response.json().data as Skill[])
+    // Map the JSON response into a Skill[] Observable.
+    .map( skils => <Skill[]>skils.json().data as Skill[])
     
-    .map((skills) => skills.sort((firstArray, secondArray) => {
+    // Apply default sort on Skills array
+    .map( skills => skills.sort((firstArray, secondArray) => {
+      firstArray = new Skill(firstArray)
       return firstArray[this.sort.sort] > secondArray[this.sort.sort] 
       ? this.sort.by === 'desc' ? -1 : 1 
       : this.sort.by === 'desc' ? 1 : -1
     }))
     
-    .map( (skills) => {
+    .map( skills => {
       return skills.map(skill => {
         return <Skill> new Skill(skill)
       })
     })
-  }
-  
-    getSkills2(): Observable<Skill[]> {
-    console.log('Hitting the Api');
-    return this.http.get(this.skillsUrl)
-    
-    .map(response => <Skill[]>response.json().data as Skill[])
-    
-    .map((skills) => skills.sort((firstArray, secondArray) => {
-      return firstArray[this.sort.sort] > secondArray[this.sort.sort] 
-      ? this.sort.by === 'desc' ? 1 : -1 
-      : this.sort.by === 'desc' ? -1 : 1
-    }))
-    
-    .map( (skills) => {
-      return skills.map(skill => {
-        return <Skill> new Skill(skill)
-      })
-    })
-  }
-
-  search(): Observable<Skill[]> {
-    return this.http
-    .get(this.skillsUrl)
-    .map(response => response.json().data as Skill[]);
   }
 }
