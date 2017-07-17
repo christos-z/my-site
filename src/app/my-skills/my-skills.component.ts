@@ -6,15 +6,12 @@ import { SkillService } from 'services/skills/skill.service';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-// Observable class extensions
-import 'rxjs/add/observable/of';
-
 // Observable operators
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/filter';
 
 @Component({
@@ -49,7 +46,7 @@ export class MySkillsComponent implements OnInit {
     this.filteredSkills = this.searchTerms
     .debounceTime(300)        
     .distinctUntilChanged()   
-    .switchMap( term => {
+    .mergeMap( term => {
 
       // If there is no search value, we return the entire skill list
       return term.length === 0   
@@ -69,7 +66,7 @@ export class MySkillsComponent implements OnInit {
     .catch(error => {
       // TODO: add real error handling
       console.log(error);
-      return Observable.of<Skill[]>([]);
+      return <Skill[]>([]);
     });
   }
   
