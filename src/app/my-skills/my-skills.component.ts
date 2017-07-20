@@ -62,8 +62,8 @@ export class MySkillsComponent implements OnInit {
       return this.skillsFromApi
       .map( skills => {
         return skills
-        .filter(skill => this.filterThisShit(skill, searchObject.searchTerm))
-        .sort((firstArray, secondArray) => this.sortThisShit(firstArray, secondArray))
+        .filter(skill => this.filterSkills(skill, searchObject.searchTerm))
+        .sort((firstArray, secondArray) => this.sortSkills(firstArray, secondArray))
       })
     })
     .catch(error => {
@@ -74,13 +74,13 @@ export class MySkillsComponent implements OnInit {
     
   }
 
-  filterThisShit (skill, searchTerm) {
+  filterSkills (skill, searchTerm) {
     if(!skill.name.toLowerCase().indexOf(searchTerm.toLowerCase())) {
       return <Skill> new Skill(skill)
     }
   }
 
-  sortThisShit (firstArray, secondArray) {
+  sortSkills (firstArray, secondArray) {
     firstArray = new Skill(firstArray)
 
     return firstArray[this.sort.by] > secondArray[this.sort.by] 
