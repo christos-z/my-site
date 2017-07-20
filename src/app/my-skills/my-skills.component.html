@@ -5,17 +5,17 @@
       <h4>Skill Search</h4>
       <input id="search-box" (keyup)="search($event)" />
       <label for="sortBy">Sort by:</label>
-      <select (change)="filter($event)" name="sortBy">
-        <option value="name">name</option>
+      <select (change)="sortBy($event)" name="sortBy">
         <option value="experienceYears">Experience Years</option>
+        <option value="name">name</option>
       </select>
-      <select (change)="filter($event)" name="order">
+      <select (change)="sortDirection($event)" name="order">
         <option value="desc">Descending</option>
         <option value="asc">Ascending</option>
       </select>
     </div>
     <div class="content-slider no-scroll" >
-      <article *ngFor="let skill of filteredSkills | async" class="skill-card">
+      <article *ngFor="let skill of skills | async" class="skill-card">
         <div class="flip-container">
           <figure class="front face">
             <div *ngIf="skill.experienceYears >= 2" class="ribbon ribbon-top-right" [ngClass]="skill.rank">
