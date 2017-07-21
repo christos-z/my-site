@@ -6,4 +6,49 @@ import { Component } from '@angular/core';
   styleUrls: ['./scss/about-me.scss']
 })
 
-export class AboutMeComponent {}
+export class AboutMeComponent {
+  private sillySkills = [
+  {
+    name: "Cups of tea drunk a day",
+    type: "svg",
+    icon: "tea",
+    rank: 8       
+  },
+  {
+    name: "Tea drinking ability",
+    type: "progressBar",
+    rank: 95      
+  },
+  {
+    name: "Video Games Played",
+    type: "progressBar",
+    rank: 80    
+  },
+  {
+    name: "BBQ Grilling skill",
+    type: "progressBar",
+    rank: 75    
+  },
+  {
+    name: "BBQ Eating skill",
+    type: "progressBar",
+    rank: 90    
+  },
+  {
+    name: "Beard growing skill",
+    type: "progressBar",
+    rank: 80    
+  },
+  {
+    name: "Beard Length",
+    type: "progressBar",
+    rank: 50    
+  },
+  {
+    name: "Beard Grooming skill",
+    type: "progressBar",
+    rank: 35    
+  }
+  ];
+  
+}

@@ -9,7 +9,6 @@ $assetsPath: '/../../../assets/css/assets';
 @import '../../../assets/css/core/components';
 @import '../../../assets/css/core/mediaQueries';
 
-
 .about-me-title {
 
   font-family: 'VT323', serif;
@@ -35,9 +34,11 @@ $assetsPath: '/../../../assets/css/assets';
 }
 
 .about-me-container {
-
+    color: #FFFFFF;
     font-family: 'roboto', sans-serif;
     font-weight: 100;
+    flex-direction: column;
+    max-width: 800px;
 
   h1 {
     margin-top: 30px;
@@ -53,6 +54,14 @@ $assetsPath: '/../../../assets/css/assets';
     font-size: 20px;
     text-align: center;
     font-family: 'VT323', serif;
+  }
+
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
 }
