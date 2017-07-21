@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'svg-icons',
@@ -7,6 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 
 
-export class SvgIconsComponent {
+export class SvgIconsComponent implements OnInit {
+
+  private numberOfIconsToShow;
+
     @Input() icon: string;
+    @Input() repeat: number;
+
+  ngOnInit() {
+    this.numberOfIconsToShow = new Array(this.repeat);
+  }
+
   }
