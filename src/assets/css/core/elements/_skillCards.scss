@@ -1,12 +1,15 @@
 .list-of-skills {
-  margin: auto;
-  max-width: 1360px;
+  display: flex;
+  perspective: 2000px;
+  margin: 100px auto;
+  justify-content: center;
+  flex-wrap: wrap;
 
   .skill-card {
 
     margin: 10px;
     text-align: center;
-    width: calc(20% - 20px);
+    width: 100%;
     transform-style: preserve-3d;
 
     &:hover > .flip-container{
