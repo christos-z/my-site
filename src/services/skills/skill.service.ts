@@ -16,7 +16,7 @@ export class SkillService {
   // Default sort object.
   private sort = {
     sort: "experienceYears",
-    by: "desc"
+    direction: "desc"
   }
   
   constructor(private http: Http) {}
@@ -33,8 +33,8 @@ export class SkillService {
     .map( skills => skills.sort((firstArray, secondArray) => {
       firstArray = new Skill(firstArray)
       return firstArray[this.sort.sort] > secondArray[this.sort.sort] 
-      ? this.sort.by === 'desc' ? -1 : 1 
-      : this.sort.by === 'desc' ? 1 : -1
+      ? this.sort.direction === 'desc' ? -1 : 1 
+      : this.sort.direction === 'desc' ? 1 : -1
     }))
     
     .map( skills => {
