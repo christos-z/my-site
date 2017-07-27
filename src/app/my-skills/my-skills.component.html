@@ -12,7 +12,7 @@
   </select>
 </div>
 <div class="list-of-skills">
-  <article *ngFor="let skill of skills | async" class="skill-card">
+  <a [routerLink]="['/skill', skill.name]" *ngFor="let skill of skills | async" class="skill-card">
     <div class="flip-container">
       <figure class="front face">
         <div *ngIf="skill.experienceYears >= 2" class="ribbon ribbon-top-right" [ngClass]="skill.rank">
@@ -31,5 +31,5 @@
         </div>
       </figure>
     </div>
-  </article>
+  </a>
 </div>

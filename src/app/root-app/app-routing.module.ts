@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TechTestComponent }   from 'app/tech-test/tech-test.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
+import { SkillComponent }    from 'app/skill/skill.component';
 import { AboutMeComponent }    from 'app/about-me/about-me.component';
 
 const routes: Routes = [
   { path: '', component: AboutMeComponent },
   { path: 'skills', component: MySkillsComponent },
+  { path: 'skill/:skill-id', component: SkillComponent },
   { path: 'tech-test',  component: TechTestComponent },
 ];
 
