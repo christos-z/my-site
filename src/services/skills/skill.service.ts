@@ -22,7 +22,7 @@ export class SkillService {
   constructor(private http: Http) {}
   
   getSkills(): Observable<Skill[]> {
-
+    
     // Grab the skills from the API endpoint.
     return this.http.get(this.skillsUrl)
     
@@ -43,4 +43,10 @@ export class SkillService {
       })
     })
   }
+  
+  getSkill(id: string): Observable<Skill> {
+    return this.getSkills()
+    .map(skills => skills.find(skill => skill.name === id));
+  }
+  
 }
