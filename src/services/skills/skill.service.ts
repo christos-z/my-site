@@ -11,7 +11,7 @@ import {Skill} from './skill';
 export class SkillService {
   
   // Define the API endpoint url
-  private skillsUrl = 'api/skills';
+  private apiUrl = 'api/skills';
   
   // Default sort object.
   private sort = {
@@ -24,10 +24,10 @@ export class SkillService {
   getSkills(): Observable<Skill[]> {
     
     // Grab the skills from the API endpoint.
-    return this.http.get(this.skillsUrl)
+    return this.http.get(this.apiUrl)
     
     // Map the JSON response into a Skill[] Observable.
-    .map( skils => <Skill[]>skils.json().data as Skill[])
+    .map( skills => <Skill[]>skills.json().data as Skill[])
     
     // Apply default sort on Skills array
     .map( skills => skills.sort((firstArray, secondArray) => {
