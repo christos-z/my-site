@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { SkillService } from 'services/skills/skill.service';
 import { Skill } from 'services/skills/skill';
 import { Observable } from 'rxjs/Observable';
