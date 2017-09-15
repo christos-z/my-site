@@ -11,7 +11,7 @@
     <option value="asc">Ascending</option>
   </select>
 </div>
-<div class="list-of-skills">
+<div class="card-container">
   <a [routerLink]="['/skill', skill.name]" *ngFor="let skill of skills | async" class="skill-card">
     <div class="flip-container">
       <figure class="front face">

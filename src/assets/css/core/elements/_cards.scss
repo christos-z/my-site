@@ -1,15 +1,36 @@
-.list-of-skills {
+.card-container {
   display: flex;
   perspective: 2000px;
   margin: 100px auto;
   justify-content: center;
   flex-wrap: wrap;
-
-  .skill-card {
-
+  
+  .skill-card,
+  .test-card {
     margin: 10px;
     text-align: center;
     width: 100%;
+  }
+
+  .test-card figure {
+    margin: 0;
+   
+    padding: 10px;
+    background: black;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    img {
+      width: 100%
+    }
+    figcaption {
+      color: white;
+    }
+  }
+
+  .skill-card {
     transform-style: preserve-3d;
 
     &:hover > .flip-container{
