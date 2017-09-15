@@ -1,6 +1,18 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
+    const tests = [
+      {
+        company: 'The Workshop',
+        testUrl: 'http://christoszenonos.com/tech-tests/the-workshop',
+        logoImg: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
+      },
+      {
+        company: 'PulseLive',
+        testUrl: 'http://www.christoszenonos.com/tech-tests/pulselive',
+        logoImg: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+      }
+    ];
     const skills = [
     {
       name: 'Javascript',
@@ -325,6 +337,6 @@ export class InMemoryDataService implements InMemoryDbService {
     },
     
     ];
-    return {skills};
+    return {skills, tests};
   }
 }
