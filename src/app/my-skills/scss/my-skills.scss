@@ -1,14 +1,10 @@
-$assetsPath: '/../../../assets/css/assets';
-
-
 //Utilities
-@import '../../../assets/css/core/utilities';
-@import '../../../assets/css/themes/main/utilities';
+@import '../../../assets/css/core/utilities/reset';
 
 //Elements
-@import '../../../assets/css/core/elements/skillCards';
+@import '../../../assets/css/core/elements/cards';
 @import '../../../assets/css/core/elements/cornerRibbons';
-@import '../../../assets/css/core/mediaQueries';
+@import '../../../assets/css/core/mediaQueries/cards';
 
 
 :host {

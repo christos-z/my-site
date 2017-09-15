@@ -1,13 +1,4 @@
-$assetsPath: '/../../../assets/css/assets';
-
-//Utilities
-@import '../../../assets/css/core/utilities';
-@import '../../../assets/css/themes/main/utilities';
-
-//Elements
-@import '../../../assets/css/core/elements';
-@import '../../../assets/css/core/components';
-@import '../../../assets/css/core/mediaQueries';
+@import '../../../assets/css/core/utilities/reset';
 
 .about-me-title {
 
@@ -54,14 +45,6 @@ $assetsPath: '/../../../assets/css/assets';
     font-size: 20px;
     text-align: center;
     font-family: 'VT323', serif;
-  }
-
-  .skill-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
   }
 
 }
