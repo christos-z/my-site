@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 
 //App components imports
 import { TechTestComponent } from 'app/tech-test/tech-test.component';
+import { TechTestsComponent } from 'app/tech-tests/tech-tests.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
 import { SkillComponent }    from 'app/skill/skill.component';
 import { AboutMeComponent } from "app/about-me/about-me.component";
@@ -30,6 +31,7 @@ import { SvgIconsComponent } from "common/svg-icons/svg-icons.component";
   declarations: [
     AppComponent,
     TechTestComponent,
+    TechTestsComponent,
     AboutMeComponent,
     MySkillsComponent,
     SkillComponent,
