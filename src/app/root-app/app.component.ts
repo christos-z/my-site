@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, Event as RouterEvent,  NavigationStart, NavigationEnd, NavigationCancel, NavigationError,ActivatedRoute } from '@angular/router';
+import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-root',
