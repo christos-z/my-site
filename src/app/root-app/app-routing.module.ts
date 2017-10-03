@@ -21,6 +21,3 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
-
-
-// http://localhost:4200/skill/Git
