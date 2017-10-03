@@ -6,11 +6,12 @@ import { TechTestsComponent }   from 'app/tech-tests/tech-tests.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
 import { SkillComponent }    from 'app/skill/skill.component';
 import { AboutMeComponent }    from 'app/about-me/about-me.component';
+import { SkillResolver } from 'resolvers/resolvers';
 
 const routes: Routes = [
   { path: '', component: AboutMeComponent },
   { path: 'skills', component: MySkillsComponent },
-  { path: 'skill/:skill-id', component: SkillComponent },
+  { path: 'skill/:skill-id', component: SkillComponent, resolve: { skill: SkillResolver } },
   { path: 'tech-test/:test-id',  component: TechTestComponent },
   { path: 'tech-tests',  component: TechTestsComponent },
 ];
@@ -20,3 +21,6 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
+
+
+// http://localhost:4200/skill/Git

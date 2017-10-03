@@ -21,6 +21,10 @@ import { AboutMeComponent } from "app/about-me/about-me.component";
 import { HeaderComponent }    from 'common/header/header.component';
 import { SvgIconsComponent } from "common/svg-icons/svg-icons.component";
 
+//Resolvers
+import { SkillResolver } from 'resolvers/resolvers';
+import { SkillService } from 'services/skills/skill.service';
+
 @NgModule({
   imports: [
     HttpModule,
@@ -38,7 +42,7 @@ import { SvgIconsComponent } from "common/svg-icons/svg-icons.component";
     SvgIconsComponent,
     HeaderComponent
   ],
-  providers: [],
+  providers: [SkillResolver, SkillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

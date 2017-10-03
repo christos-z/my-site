@@ -12,7 +12,17 @@ import { Observable } from 'rxjs/Observable';
   selector: 'app-tech-test',
   providers: [TestService],
   templateUrl: './tech-test.component.html',
-  styleUrls: ['./scss/bootstrap.scss']
+  styles: [
+    `iframe { 
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      margin: auto;
+      left: 0;
+      right: 0;
+      border: none; 
+    }`
+  ]
 })
 
 export class TechTestComponent {
