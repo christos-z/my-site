@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'skill',
   templateUrl: './skill.component.html',
+  styleUrls: ['./scss/my-skills.scss'],
+
 })
 export class SkillComponent implements OnInit {
   private skill: Observable<Skill[]>;

@@ -1,1 +1,16 @@
-<h1>{{ (skill)?.name}}</h1>
+<article>
+  <header>
+    <h1 class="skill-title">{{ (skill)?.name}}</h1>
+    <img [src]="skill.img" class="skill-image">
+  </header>
+  <div style="flex: 1">
+    <h2>Years of experience</h2>
+    <progress [value]=skill.experienceYears max="15"></progress>
+  </div>
+  <footer>
+    <ul role="list">
+      <li *ngFor="let placesUsed of skill.placesUsed;">{{placesUsed}}</li>
+    </ul>
+    <h2>This is where I will put some text about the skill, This should open up as an accordion</h2>
+  </footer>
+</article>
