@@ -1,16 +1,35 @@
 <article>
   <header>
-    <h1 class="skill-title">{{ (skill)?.name}}</h1>
+    <h1 class="skill-title">{{ skill.name}}</h1>
     <img [src]="skill.img" class="skill-image">
   </header>
-  <div style="flex: 1">
+
+  <div class="progress-container">
     <h2>Years of experience</h2>
     <progress [value]=skill.experienceYears max="15"></progress>
   </div>
+  <div class="progress-container">
+    <h2>Confidence level</h2>
+    <progress [value]=skill.experienceYears max="15"></progress>
+  </div>
+  <div class="progress-container">
+    <h2>Time spend using technology</h2>
+    <progress [value]=skill.experienceYears max="15"></progress>
+  </div>
   <footer>
-    <ul role="list">
+
+    <ul class="places-worked-container" role="list">
       <li *ngFor="let placesUsed of skill.placesUsed;">{{placesUsed}}</li>
     </ul>
-    <h2>This is where I will put some text about the skill, This should open up as an accordion</h2>
+    
+    <div *ngFor="let skillDescription of skill.desc;">
+      
+      <h2 *ngIf="skillDescription != '[object Object]'">{{ skillDescription }}</h2>
+      
+      <ul role="list" *ngIf="skillDescription == '[object Object]'">
+        <li *ngFor="let skillDescriptionList of skillDescription.list;">{{skillDescriptionList}}</li>
+      </ul>
+    
+    </div>
   </footer>
 </article>

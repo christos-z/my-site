@@ -25,7 +25,26 @@ export class InMemoryDataService implements InMemoryDbService {
       {usedAt:'This website',timeSpentUsing:5},
       {usedAt:'Other personal projects',timeSpentUsing:5}
       ],
-      desc: 'Javascript is a huge part of my programming life, whether it\'s personal or commercial projects, the chances are that I\'ve used javascript throughout these projects in one way or another.'
+      desc: [
+        `Javascript is a huge part of my life, it's where my programming journey first began and it's whats ignited my passion development ever since.`,
+        `Whether it's personal or commercial projects, the chances are that I've either had to use or incorparate javascript within these projects in one way or another.`,
+        `I've been fortunate enough to work in a variety of different javascript technologies and frameworks. During my time at Quidco, I utilised AngularJS, JQuery and Vanilla Javascript on a daily basis. Some examples are:`,
+        {
+          list: [
+            `Creating animations.`,
+            `Accordions.`,
+            `Carousels.`,
+            `Homepage & Deal Widgets.`,
+            `Pagination.`,
+            `Async loaders.`,
+            `DOM manipulation.`,
+            `AngularJS, mainly https://www.shoop.fr/ (Quidco's french cashback site, written entirely in AngularJS.`,
+            `Cashback toolbar.`
+          ]
+        },
+        `Talk about nodejs with quidco as well for the back end.`,
+        `It's been awesome to see javascript continue to grow and develop. with the arrival of ECMAScript 6, new features such as arrow functions etc. , `
+      ] 
     },
     {
       name: 'AngularJS (1 & 2)',

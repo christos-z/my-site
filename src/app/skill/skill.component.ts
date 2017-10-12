@@ -15,6 +15,7 @@ export class SkillComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {} 
   
   ngOnInit(): void {
-    this.skill = this.activatedRoute.snapshot.data['skill'];    
+    this.skill = this.activatedRoute.snapshot.data['skill'];
+    console.log(this.skill);
   }
 }
