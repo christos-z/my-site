@@ -1,0 +1,33 @@
+<article class="skill-card">
+  <header>
+    <h1 class="skill-title">{{ skill.name}}</h1>
+    <img [src]="skill.img" class="skill-image">
+  </header>
+  <div class="progress-container">
+    <div class="progress-item">
+      <h2>Years of experience</h2>
+      <progress [value]=skill.experienceYears max="15"></progress>
+    </div>
+    <div class="progress-item">
+      <h2>Confidence level</h2>
+      <progress [value]=skill.experienceYears max="15"></progress>
+    </div>
+    <div class="progress-item">
+      <h2>Time spend using technology</h2>
+      <progress [value]=skill.experienceYears max="15"></progress>
+    </div>
+  </div>
+  <footer>
+    <ul class="places-worked-list" role="list">
+      <li *ngFor="let placesUsed of skill.placesUsed;">{{placesUsed}}</li>
+    </ul>
+    <div class="skill-description-container">
+      <div class="skill-description" *ngFor="let skillDescription of skill.desc;">
+        <h2 *ngIf="skillDescription != '[object Object]'">{{ skillDescription }}</h2>
+        <ul role="list" *ngIf="skillDescription == '[object Object]'">
+          <li *ngFor="let skillDescriptionList of skillDescription.list;">{{skillDescriptionList}}</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</article>

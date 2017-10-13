@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { TechTestComponent } from 'app/tech-test/tech-test.component';
 import { TechTestsComponent } from 'app/tech-tests/tech-tests.component';
 import { MySkillsComponent }    from 'app/my-skills/my-skills.component';
-import { SkillComponent }    from 'app/skill/skill.component';
+import { SkillComponent, SkillCardComponent, SkillSideMenuComponent }    from 'app/skill/skill.component';
 import { AboutMeComponent } from "app/about-me/about-me.component";
 
 //Common Imports
@@ -38,7 +38,9 @@ import { SkillService } from 'services/skills/skill.service';
     TechTestsComponent,
     AboutMeComponent,
     MySkillsComponent,
-    SkillComponent,
+    SkillComponent, 
+    SkillCardComponent, 
+    SkillSideMenuComponent,
     SvgIconsComponent,
     HeaderComponent
   ],

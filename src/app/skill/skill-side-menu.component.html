@@ -1,0 +1,6 @@
+<ul class="skill-menu">
+  <li *ngFor="let skill of skillsFromApi | async" role="button">
+    <i class="icon icon-bitcoin-circle"></i>{{skill.name}}
+    <i class="icon icon-arrow-next"></i>
+  </li>
+</ul>
