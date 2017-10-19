@@ -1,10 +1,6 @@
 //Utilities
 @import '../../../assets/css/core/utilities/reset';
 
-.skill-menu {
-  float: left
-}
-
 .skill-card {
   background: white;
   color: gray;
@@ -84,10 +80,7 @@
     }
   }
 
-  .skill-description-container{
-    padding: 10px;
-    .skill-description {
-      margin-bottom: 10px
-    }
+  .skill-description-container .skill-description {
+      margin: 10px;
   }
 }

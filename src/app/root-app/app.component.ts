@@ -9,14 +9,14 @@ import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, Navigatio
 export class AppComponent {
   title = 'Welcome to my portfolio';
   
-  constructor(private router: Router) {
-    router.events.subscribe((event: RouterEvent) => {
-      this.navigationInterceptor(event)
-    })
-  } 
+  // constructor(private router: Router) {
+  //   router.events.subscribe((event: RouterEvent) => {
+  //     this.navigationInterceptor(event)
+  //   })
+  // } 
   
-  navigationInterceptor(event: RouterEvent): void {
-    console.log(event);
-  }
+  // navigationInterceptor(event: RouterEvent): void {
+  //   console.log(event);
+  // }
   
 }

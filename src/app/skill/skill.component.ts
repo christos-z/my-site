@@ -2,9 +2,8 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { SkillService } from 'services/skills/skill.service';
 import { Skill } from 'services/skills/skill';
-
+import { SkillService } from 'services/skills/skill.service';
 @Component({
   selector: 'skill',
   templateUrl: './skill.component.html'
@@ -28,9 +27,6 @@ export class SkillComponent {
 
 export class SkillCardComponent extends SkillComponent implements OnInit {
 
-  constructor(activatedRoute: ActivatedRoute) {
-    super(activatedRoute);
-  }
   ngOnInit(): void {
     super.getSkill();
   }
@@ -42,15 +38,16 @@ export class SkillCardComponent extends SkillComponent implements OnInit {
   styleUrls: ['./scss/skill.scss'],
 })
 
-export class SkillSideMenuComponent extends SkillComponent implements OnInit {
 
-  private skillsFromApi: Observable<Skill[]>;
+export class SkillSideMenuComponent extends SkillComponent {
+  
+private skillsFromApi: Observable<Skill[]>;
 
-  constructor(private skillService: SkillService, activatedRoute: ActivatedRoute) {
+  constructor(activatedRoute: ActivatedRoute, private skillService: SkillService) {
     super(activatedRoute);
   }
+
   ngOnInit(): void {
     this.skillsFromApi = this.skillService.getSkills();
-    console.log(this.skillsFromApi);
   }
 }
