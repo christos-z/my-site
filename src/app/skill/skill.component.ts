@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,13 +10,23 @@ import { SkillService } from 'services/skills/skill.service';
 })
 
 export class SkillComponent {
-  public skill: Observable<Skill[]>;
-  
-  constructor(private activatedRoute: ActivatedRoute) {} 
-  
+  public skill: Skill;
+
+  constructor(private skillService: SkillService,
+  public activatedRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.getSkill();
+  }
+
   getSkill(): void {
     this.skill = this.activatedRoute.snapshot.data['skill'];
   }
+
+  changeActiveSkill(event) {
+    this.skillService.getSkill(event).subscribe(skill => this.skill = skill );
+  }
+
 }
 
 @Component({
@@ -25,11 +35,8 @@ export class SkillComponent {
   styleUrls: ['./scss/skill.scss'],
 })
 
-export class SkillCardComponent extends SkillComponent implements OnInit {
-
-  ngOnInit(): void {
-    super.getSkill();
-  }
+export class SkillCardComponent {
+  @Input() skill: Skill;
 }
 
 @Component({
@@ -39,15 +46,21 @@ export class SkillCardComponent extends SkillComponent implements OnInit {
 })
 
 
-export class SkillSideMenuComponent extends SkillComponent {
-  
-private skillsFromApi: Observable<Skill[]>;
+export class SkillSideMenuComponent {
+    
+  @Input() currentSkill: Skill['name'];
+
+  @Output() activeSkill: EventEmitter<Skill> = new EventEmitter<Skill>();
+
+  private skillsFromApi: Observable<Skill[]>;
 
   constructor(activatedRoute: ActivatedRoute, private skillService: SkillService) {
-    super(activatedRoute);
   }
 
   ngOnInit(): void {
     this.skillsFromApi = this.skillService.getSkills();
+  }
+  setActiveSkill (skillName): void {
+    this.activeSkill.emit(skillName)
   }
 }

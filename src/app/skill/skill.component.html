@@ -1,2 +1,2 @@
-<skillSideMenu></skillSideMenu>
-<skillCard></skillCard>
+<skillSideMenu (activeSkill)="changeActiveSkill($event)" [currentSkill]="skill.name"></skillSideMenu>
+<skillCard [skill]="skill"></skillCard>
