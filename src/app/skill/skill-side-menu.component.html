@@ -1,6 +1,9 @@
 <ul class="skill-menu">
-  <li *ngFor="let skill of skillsFromApi | async" role="button">
-    <a [routerLink]="['/skill', skill.name]" (click)="setActiveSkill(skill.name)" > {{skill.name}} </a>
+  <li *ngFor="let skill of skillsFromApi | async" role="button" [routerLink]="['/skill', skill.name]" (click)="setActiveSkill(skill.name)">
+    <span class="skill-logo">
+      <img [src]="skill.img">
+    </span>
+    <span>{{skill.name}}</span>
     <i class="icon icon-arrow-next"></i>
   </li>
 </ul>

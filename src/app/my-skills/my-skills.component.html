@@ -12,17 +12,17 @@
   </select>
 </div>
 <div class="card-container">
-  <a [routerLink]="['/skill', skill.name]" *ngFor="let skill of skills | async" class="skill-card">
+  <article class="skill-card" [routerLink]="['/skill', skill.name]" *ngFor="let skill of skills | async">
     <div class="flip-container">
-      <figure class="front face">
-        <div *ngIf="skill.experienceYears >= 2" class="ribbon ribbon-top-right" [ngClass]="skill.rank">
+      <figure class="card-face front">
+        <div class="ribbon top-right" [ngClass]="skill.rank" *ngIf="skill.experienceYears >= 2">
           <span>{{skill.experienceYears}} Years expereince</span>
         </div>
-        <img [src]="skill.img" class="skill-image">
-        <figcaption>{{skill.name}}</figcaption>
+        <img class="skill-logo" [src]="skill.img">
+        <figcaption class="skill-title">{{skill.name}}</figcaption>
       </figure>
-      <figure class="back face">
-        <div class="content">
+      <figure class="card-face back">
+        <div class="skill-snippet">
           <h1>OVER {{skill.experienceYears}} YEARS EXPERIENCE.*</h1>
           <p>Used at:</p>
           <ul>
@@ -31,5 +31,5 @@
         </div>
       </figure>
     </div>
-  </a>
+  </article>
 </div>

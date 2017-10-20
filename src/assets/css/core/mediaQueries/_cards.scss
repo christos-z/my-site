@@ -1,0 +1,31 @@
+
+@media screen and (min-width: 375px) {
+  .card-container {
+    flex-wrap: wrap;
+    overflow: visible;
+
+    .skill-card,
+    .test-card,
+    .skill-card .flip-container,
+    .skill-card .flip-container .card-face {
+      height: 100%;
+      width: 100%;
+    }
+    .skill-card,
+    .test-card {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-container .skill-card,
+  .card-container .test-card { 
+    flex-basis: calc(25% - 20px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-container .skill-card,
+  .card-container .test-card {
+    flex-basis: calc(20% - 20px);
+  }
+}

@@ -1,20 +1,75 @@
 .card-container {
   display: flex;
-  perspective: 2000px;
-  margin: 100px auto;
+  overflow: scroll;
   justify-content: center;
-  flex-wrap: wrap;
+  perspective: 2000px;
   
   .skill-card,
   .test-card {
+    color: white;
+    cursor: pointer;
     margin: 10px;
     text-align: center;
-    width: 100%;
+  }
+ 
+  .skill-card,
+  .test-card,
+  .skill-card .flip-container,
+  .skill-card .flip-container .card-face {
+    height: 150px;
+    width: 150px;
+  }
+
+  .skill-card .flip-container,
+  .skill-card .flip-container .card-face,
+  .skill-card .flip-container .card-face .skill-title  {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .skill-card:hover > .flip-container{
+    animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both, backwards;
+  }
+
+  .skill-card {
+    // transform-style: preserve-3d; //Check if you can remove this, potential issues with Safari
+
+    .flip-container {
+      padding-top: 100%; //Look into doing this differently.
+
+      .card-face {
+        background: black;
+        border-radius: 10px;
+        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+
+        &.back {
+          transform: rotateY(180deg);
+        }
+
+        .skill-logo{
+          max-height: 100%;
+          max-width: 100%;
+          padding: 20px 10px 50px;
+        }
+
+        .skill-title {
+          font-size: 20px;
+          bottom: 15px;
+          position: absolute;
+          width: 100%;
+        }
+
+        .skill-snippet {
+          padding: 20px;
+        }
+      }
+    }
   }
 
   .test-card figure {
     margin: 0;
-   
     padding: 10px;
     background: black;
     border-radius: 10px;
@@ -29,62 +84,6 @@
       color: white;
     }
   }
-
-  .skill-card {
-    transform-style: preserve-3d;
-
-    &:hover > .flip-container{
-      animation: flip-vertical-fwd 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both, backwards;
-    }
-
-    .flip-container {
-      position: relative;
-      width: 100%;
-      padding-top: 100%;
-      transform-style: preserve-3d;
-      backface-visibility: hidden;
-
-      .face {
-        transform-style: preserve-3d;
-        background: black;
-        top: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
-        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.5);
-
-        &.back {
-          transform: rotateY(180deg);
-        }
-
-        .skill-image{
-          max-width: 100%;
-          height: 100%;
-          padding: 20px 10px 50px;
-        }
-
-        figcaption {
-          backface-visibility: hidden;
-          font-size:25px;
-          padding-bottom:15px;
-          color: white;
-          text-align: center;
-          bottom: 0;
-          position: absolute;
-          width: 100%;
-        }
-
-        .content {
-          padding: 20px;
-        }
-      }
-    }
-  }
 }
 
 @keyframes flip-vertical-fwd {
@@ -95,5 +94,3 @@
     transform: translateZ(100px) rotateY(-180deg);
   }
 }
-
-/*# sourceMappingURL=animation.css.map */

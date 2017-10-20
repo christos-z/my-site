@@ -1,0 +1,30 @@
+:host {
+  ul {
+    font-family: 'roboto';
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align:left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      cursor: pointer;
+      height: 40px;
+      display:flex;
+      align-items: center;
+      
+    .skill-logo{
+      width:50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      img{
+        max-width:30px; 
+        max-height:40px; 
+      }     
+    }
+  }
+  }
+}
