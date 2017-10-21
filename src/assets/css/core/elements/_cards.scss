@@ -1,6 +1,7 @@
 .card-container {
   display: flex;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   justify-content: center;
   perspective: 2000px;
   

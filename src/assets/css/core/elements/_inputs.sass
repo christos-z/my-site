@@ -1,126 +1,44 @@
-.custom-field
-  color: $brand-shade-7
-  position: relative
-
-  input, textarea,
-  label:after
-    position: absolute
-
-  label, input, textarea
-    font-size: $brand-fontsize-5
-    width: 100%
-
-  input,
-  textarea
-    @extend %reset-input
-    color: $custom-field-primary-color
-    padding: 20px 8px 8px
-    z-index: 1
-
-    &[type="password"]
-      -webkit-text-security: square
-      font: $base-password-font
-      letter-spacing: 1px
-
-  input:disabled + label
-    background: $custom-field-disabled-bg
-    border-color: $custom-field-disabled-border-color
-    color: $custom-field-disabled-color
-
-  input, label
-    height: 48px
-      
-  label
-    background: $custom-field-bg
-    border: $custom-field-border
-    color: $custom-field-secondary-color
-    display: inline-block
-    line-height: 20px
-    max-width: 100%
-    padding: 15px 10px
-    transition: all 0.1s ease-out 0s
-    width: 100%
-
-    &.active-field
-      border-color: $custom-field-primary-border-color
-      font-size: $custom-field-secondary-fontsize
-      line-height: 1
-      padding: 8px
-      transition: all 0.1s ease-in 0s
-
-  &.custom-textarea
-
-    label, textarea
-      height: 148px
-
-    textarea
-      resize: none
-
-  &.corrected-field
-
-    label
-      border-color: $corrected-field-border-color
-
-    input
-      color: $corrected-field-color
-
-  &.invalid-field
-
-    label
-      border-color: $invalid-field-border-color
-
-    input
-      color: $invalid-field-color
-
-  &:not(.small-field) label
-    border-width: 0 0 2px
-
-  &.small-field
-
-    input, label
-      font-size: $custom-droplist-fontsize
-      height: 32px
-      padding: 8px
-
-    input
-      line-height: 18px
-
-    label
-      border-radius: $checkbox-radius
-      display: block
-      line-height: 1
-      transition: none
-
-    .error-msg
-      font-size: inherit
-
-.active-field + .toggle-password-btn
-  color: $custom-password-active-color
-
-.toggle-password-btn
-  color: $custom-field-secondary-color
-  font-size: $toggle-password-fontsize
-  font-weight: 600
-  line-height: 26px
+input,
+label:after
   position: absolute
-  right: 10px
-  text-transform: uppercase
-  top: 10px
+
+label, input, textarea
+  font-size: 20px
+
+input,
+select
+  background: none
+  border: none
+  outline: none
+  padding: 20px 8px 8px
   z-index: 1
 
-  i
-    font-size: 22px
+option 
+  background: #3d3d3d
+  border: none
 
-.error-msg
-  font-size: $message-field-fontsize
-  display: none
-  line-height: 1
-  margin: 10px 0 0
-
-.hint-msg
+input,
+label,
+select
+  color: white;
+  height: 48px
+    
+label,
+select
+  border-bottom: 1px solid black
   display: inline-block
-  margin-top: 5px
+  line-height: 20px
+  padding: 15px 10px
+  transition: all 0.1s ease-out 0s
+  width: 100%
 
-.invalid-field .error-msg
-  color: $invalid-field-border-color
-  display: block
+input:focus + label,
+input:not(:placeholder-shown) + label
+  border-bottom: 2px solid grey
+  font-size: 10px
+  line-height: 1
+  padding: 8px
+  transition: all 0.1s ease-in 0s
+
+select
+  padding: 0

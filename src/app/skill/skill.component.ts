@@ -6,7 +6,12 @@ import { Skill } from 'services/skills/skill';
 import { SkillService } from 'services/skills/skill.service';
 @Component({
   selector: 'skill',
-  templateUrl: './skill.component.html'
+  templateUrl: './skill.component.html',
+  styles: [
+    `:host { 
+      display: flex;
+    }`
+  ]
 })
 
 export class SkillComponent {
@@ -42,7 +47,7 @@ export class SkillCardComponent {
 @Component({
   selector: 'skillSideMenu',
   templateUrl: './skill-side-menu.component.html',
-  styleUrls: ['./scss/skill.scss'],
+  styleUrls: ['./scss/skillNavbar.scss'],
 })
 
 

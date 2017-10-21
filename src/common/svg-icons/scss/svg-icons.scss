@@ -74,6 +74,15 @@
         animation-delay: 11.3s;
       }
     }
+    &:nth-child(10) {
+      animation-delay: 9s;
+      .liquid {
+        animation-delay: 9s;
+      }
+      .steam {
+        animation-delay: 12.3s;
+      }
+    }
   }
 
   /* ANIMATE LIQUID FILL */

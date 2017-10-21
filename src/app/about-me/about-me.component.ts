@@ -12,7 +12,7 @@ export class AboutMeComponent {
     name: "Cups of tea drunk a day",
     type: "svg",
     icon: "tea",
-    rank: 8       
+    rank: 10       
   },
   {
     name: "Tea drinking ability",

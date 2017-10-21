@@ -2,15 +2,16 @@
 @import '../../../assets/css/core/utilities/reset';
 
 .skill-card {
+  margin-left: 20px;
   background: white;
   color: gray;
   display: flex;
   flex-wrap: wrap;
   font-family: 'roboto';
   font-size: 12px;
-  margin: auto;
   max-width: 768px;
   overflow: hidden;
+  position: fixed;
   text-transform: uppercase;
   
   .progress-container {

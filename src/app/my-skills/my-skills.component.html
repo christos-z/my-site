@@ -1,17 +1,21 @@
-<div id="search-component">
-  <h4>Skill Search</h4>
-  <input id="search-box" (keyup)="search($event)" />
-  <label for="sortBy">Sort by:</label>
-  <select (change)="sortBy($event)" name="sortBy">
-    <option value="experienceYears">Experience Years</option>
-    <option value="name">name</option>
-  </select>
-  <select (change)="sortDirection($event)" name="order">
-    <option value="desc">Descending</option>
-    <option value="asc">Ascending</option>
-  </select>
-</div>
 <div class="card-container">
+  <div style="flex-basis:50%;    margin-bottom: 50px;">
+    <input id="search-input" type="text" maxlength="15" (keyup)="search($event)" placeholder=" " />
+    <label for="search-input">Search for a skill</label>
+  </div>
+  <div style="flex-basis:20%;margin-left: 5%;">
+    <select (change)="sortBy($event)" name="sortBy" style="color:white; font-size:20px">
+      <option value="experienceYears">Experience Years</option>
+      <option value="name">Name</option>
+    </select>
+  </div>
+  <div style="flex-basis:20%;margin-left: 5%;">
+    <select (change)="sortDirection($event)" name="order" style="color:white; font-size:20px">
+      <option value="desc">Descending</option>
+      <option value="asc">Ascending</option>
+    </select>
+  </div>
+
   <article class="skill-card" [routerLink]="['/skill', skill.name]" *ngFor="let skill of skills | async">
     <div class="flip-container">
       <figure class="card-face front">
@@ -23,7 +27,7 @@
       </figure>
       <figure class="card-face back">
         <div class="skill-snippet">
-          <h1>OVER {{skill.experienceYears}} YEARS EXPERIENCE.*</h1>
+          <!-- <h1>OVER {{skill.experienceYears}} YEARS EXPERIENCE.*</h1> -->
           <p>Used at:</p>
           <ul>
             <li *ngFor="let placesUsed of skill.placesUsed;">{{placesUsed}}</li>
