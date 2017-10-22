@@ -16,7 +16,8 @@ import { SkillService } from 'services/skills/skill.service';
 
 export class SkillComponent {
   public skill: Skill;
-
+  public breadcrumbs = true;
+  
   constructor(private skillService: SkillService,
   public activatedRoute: ActivatedRoute) {}
 
@@ -37,7 +38,10 @@ export class SkillComponent {
 @Component({
   selector: 'skillCard',
   templateUrl: './skill-card.component.html',
-  styleUrls: ['./scss/skill.scss'],
+  styleUrls: [
+    './scss/skill.scss',
+    './scss/mediaQueries/skill.scss'
+  ]
 })
 
 export class SkillCardComponent {
@@ -47,7 +51,10 @@ export class SkillCardComponent {
 @Component({
   selector: 'skillSideMenu',
   templateUrl: './skill-side-menu.component.html',
-  styleUrls: ['./scss/skillNavbar.scss'],
+  styleUrls: [
+    './scss/skillNavbar.scss',
+    './scss/mediaQueries/skillNavbar.scss'
+  ]
 })
 
 

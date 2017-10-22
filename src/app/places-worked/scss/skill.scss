@@ -2,15 +2,16 @@
 @import '../../../assets/css/core/utilities/reset';
 
 .skill-card {
+  margin-left: 20px;
   background: white;
   color: gray;
   display: flex;
   flex-wrap: wrap;
   font-family: 'roboto';
   font-size: 12px;
-  // max-width: 768px;
+  max-width: 768px;
   overflow: hidden;
-  // position: fixed;
+  position: fixed;
   text-transform: uppercase;
   
   .progress-container {
@@ -58,7 +59,26 @@
   }
 
   .places-worked-list {
-    display: none;
+    border-bottom: solid 2px #C6C6C2;
+    display: flex;
+    flex-basis: 100%;
+    font-weight: 600;
+  
+    li {
+      color: gray;
+      padding: 15px;
+      position: relative;
+    
+      &:after {
+        border-right: solid 2px #C6C6C2;
+        content: "";
+        height: 115%;
+        position: absolute;
+        right: 0;
+        top: -7.5%;
+        transform: rotate(25deg);
+      }
+    }
   }
 
   .skill-description-container .skill-description {

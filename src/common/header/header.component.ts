@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'navbarHeader',
-  styleUrls: ['./scss/header.scss'],
+  styleUrls: [
+    './scss/header.scss',
+    './scss/breadcrumbs.scss'
+  ],
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-
+  
 }

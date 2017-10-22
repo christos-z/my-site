@@ -1,0 +1,9 @@
+<ul class="skill-menu">
+  <li *ngFor="let placeWorked of placesWorkedFromApi | async" role="button" [routerLink]="['/places-worked', placeWorked.company]" (click)="setActiveSkill(placeWorked.company)">
+    <span class="skill-logo">
+      <img [src]="placeWorked.img">
+    </span>
+    <span>{{placeWorked.company}}</span>
+    <i class="icon icon-arrow-next"></i>
+  </li>
+</ul>

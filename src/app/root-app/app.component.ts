@@ -8,6 +8,7 @@ import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, Navigatio
 
 export class AppComponent {
   title = 'Welcome to my portfolio';
+  initialCount: number = 100;
   
   // constructor(private router: Router) {
   //   router.events.subscribe((event: RouterEvent) => {

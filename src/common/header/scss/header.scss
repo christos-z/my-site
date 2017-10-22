@@ -1,21 +1,27 @@
-$assetsPath: '/../../../assets/css/assets';
+@import '../../../assets/css/core/utilities/reset';
 
-  //Utilities
-@import '../../../assets/css/core/utilities';
-@import '../../../assets/css/themes/main/utilities';
+.main-navbar-container{
+  left: 0;
+  top: 0;
+  position: fixed;
+  right: 0;
+  z-index: 7;
+  min-width: 320px;
+  background: white;
 
-  //Elements
-@import '../../../assets/css/core/elements/buttons';
-@import '../../../assets/css/core/components/stickyHeader';
-@import '../../../assets/css/core/mediaQueries/stickyHeader';
+.navbar {
+  max-width: 1360px;
+  border: 0;
+  border-radius: 0;
+  justify-content: space-around;
+  margin: 0 auto;
+  top: 0;
+  display: flex;
 
-:host {
-  font-family: $brand-primary-font-family;
+  [class*='-btn'] {
+    background: none;
+    border: none;
 
-  .logo {
-    font-family: 'Audiowide';
-    font-size: 30px;
-    color: #03051c;
-    height: 40px
   }
+}
 }

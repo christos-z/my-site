@@ -1,0 +1,22 @@
+<article class="skill-card">
+  <header>
+    <h1 class="skill-title">{{ placeWorked.company }}</h1>
+    <img [src]="placeWorked.img" class="skill-image">
+  </header>
+  <div class="progress-container">
+    <div class="progress-item">
+      <h2>Time spend at company</h2>
+      <!-- <progress [value]=áskill.experienceYears max="5"></progress> -->
+    </div>
+  </div>
+  <!-- <footer>
+    <div class="skill-description-container">
+      <div class="skill-description" *ngFor="let skillDescription of skill.desc;">
+        <h2 *ngIf="skillDescription != '[object Object]'">{{ skillDescription }}</h2>
+        <ul role="list" *ngIf="skillDescription == '[object Object]'">
+          <li *ngFor="let skillDescriptionList of skillDescription.list;">{{skillDescriptionList}}</li>
+        </ul>
+      </div>
+    </div>
+  </footer> -->
+</article>

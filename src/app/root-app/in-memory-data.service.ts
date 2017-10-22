@@ -5,12 +5,27 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         company: 'The Workshop',
         testUrl: 'http://christoszenonos.com/tech-tests/the-workshop',
-        logoImg: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
+        img: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
       },
       {
         company: 'PulseLive',
         testUrl: 'http://www.christoszenonos.com/tech-tests/pulselive',
-        logoImg: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+        img: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+      }
+    ];
+    const placesWorked = [
+      {
+        company: 'The Workshop',
+        img: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
+      },
+      {
+        company: 'PulseLive',
+        img: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+      },
+      {
+        company: 'Quidco',
+        img: '/assets/logos/quidco.svg',
+        // list tech used in groups aka, front end, back end etc
       }
     ];
     const skills = [
@@ -47,7 +62,7 @@ export class InMemoryDataService implements InMemoryDbService {
       ] 
     },
     {
-      name: 'AngularJS (1 & 2)',
+      name: 'AngularJS',
       img: '/assets/logos/angularjs.svg',
       experienceYears: 5,
       experience: [
@@ -356,6 +371,6 @@ export class InMemoryDataService implements InMemoryDbService {
     },
     
     ];
-    return {skills, tests};
+    return {skills, tests, placesWorked};
   }
 }

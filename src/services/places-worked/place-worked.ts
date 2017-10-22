@@ -1,12 +1,10 @@
-export class Test {
+export class PlaceWorked {
   company: string;
-  testUrl: string;
   img: string;
   
-  constructor(object: Test) {
+  constructor(object: PlaceWorked) {
     
     this.company = object.company;
-    this.testUrl = object.testUrl;
     this.img = object.img;
   }
 }

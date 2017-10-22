@@ -1,55 +1,14 @@
 @import '../../../assets/css/core/utilities/reset';
+@import '../../../assets/css/core/elements/roundedList';
 
-
-ol {
-  counter-reset: li;
-  list-style: none;
-  font: 15px 'Roboto';
-  padding: 0;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  margin: 0 auto;
-}
-ol ol {
-  margin-left: 2em;
-}
-.rounded-list a {
-  position: relative;
-  display: block;
-  padding: .4em .4em .4em 2em;
-  *padding: .4em;
-  margin: .5em 0;
-  background: #ddd;
-  color: #444;
-  text-decoration: none;
-  border-radius: .3em;
-  transition: all .5s ease-out; 
-}
-.rounded-list a:hover{
-  background: #eee;
-}
-.rounded-list a:before{
-  content: counter(li);
-  counter-increment: li;
-  position: absolute; 
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  height: 30px;
-  width: 30px;
-  border: 5px solid;
-  line-height: 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: all .3s ease-out;
-}
-
-
-.about-me-title {
+.about-me-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
   font-family: 'Inconsolata', serif;
-
+  
   .me {
     width: 175px;
     height: 175px;
@@ -58,16 +17,22 @@ ol ol {
     border: 3px solid white;
   }
 
-  .name {
-    font-size: 90px;
-    color: #FFFFFF;
+  .about-me-title{
+    flex: 1 1 auto;
+    text-align: center;
+
+    .name {
+      font-size: 30px;
+      color: #FFFFFF;
+    }
+  
+    .profession {
+      font-size: 25px;
+      padding-bottom: 15px;
+      border-bottom: solid 2px black;
+    }
   }
 
-  .profession {
-    font-size: 68px;
-    padding-bottom: 15px;
-    border-bottom: solid 2px black;
-  }
 
 }
 
@@ -79,12 +44,12 @@ ol ol {
 
   h1 {
     margin-top: 30px;
-    font-size: 50px;
+    font-size: 16px;
   }
 
   h2 {
     margin: 10px 0;
-    font-size: 20px;
+    font-size: 14px;
   }
 
   p {

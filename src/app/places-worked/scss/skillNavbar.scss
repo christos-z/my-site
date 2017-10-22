@@ -4,17 +4,12 @@
     font-weight: 300;
     text-transform: uppercase;
     text-align:left;
+    list-style: none;
     padding: 0;
-    position: absolute;
     margin: 0;
-    height: calc(100% - 48px);
+    height: calc(100vh - 200px);
     min-height: 500px;
     overflow-y: auto;
-    z-index: 2;
-    background: black;
-    top: 48px;
-    left: 0;
-    transform: translateX(-100%);
 
     &::-webkit-scrollbar-track
     {

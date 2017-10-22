@@ -1,7 +1,7 @@
 <div class="card-container">
   <a [routerLink]="['/tech-test', test.company]" class="test-card" *ngFor="let test of techTests | async">
     <figure>
-      <img [src]="test.logoImg" />
+      <img [src]="test.img" />
     <figcaption>{{test.company}}</figcaption>
     </figure>
   </a>

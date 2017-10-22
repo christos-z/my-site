@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+  .skill-card .places-worked-list {
+    border-bottom: solid 2px #C6C6C2;
+    display: flex;
+    flex-basis: 100%;
+    font-weight: 600;
+    overflow-x: auto;
+    overflow-y: hidden;
+    li {
+      color: gray;
+      padding: 15px;
+      position: relative;
+      flex: 0 0 auto;
+
+      &:after {
+        border-right: solid 2px #C6C6C2;
+        content: "";
+        height: 115%;
+        position: absolute;
+        right: 0;
+        top: -7.5%;
+        transform: rotate(25deg);
+      }
+    }
+  }
+  
+}

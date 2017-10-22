@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'about-me',
   templateUrl: './about-me.component.html',
-  styleUrls: ['./scss/about-me.scss']
+  styleUrls: [
+  './scss/about-me.scss',
+  './scss/mediaQueries/homepage.scss']
 })
 
 export class AboutMeComponent {
+  @Input()
+  count: number = 1220;  
+
   private sillySkills = [
   {
     name: "Cups of tea drunk a day",
