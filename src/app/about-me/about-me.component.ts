@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './about-me.component.html',
   styleUrls: [
   './scss/about-me.scss',
-  './scss/mediaQueries/homepage.scss']
+  './scss/mediaQueries/about-me.scss']
 })
 
 export class AboutMeComponent {

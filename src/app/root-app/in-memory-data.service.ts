@@ -5,22 +5,22 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         company: 'The Workshop',
         testUrl: 'http://christoszenonos.com/tech-tests/the-workshop',
-        img: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
+        img: '/assets/logos/the-workshop.png'
       },
       {
         company: 'PulseLive',
         testUrl: 'http://www.christoszenonos.com/tech-tests/pulselive',
-        img: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+        img: '/assets/logos/pulselive.png'
       }
     ];
     const placesWorked = [
       {
         company: 'The Workshop',
-        img: 'https://www.theworkshop.com/images/dist/the-workshop-logo-desktop.png'
+        img: '/assets/logos/the-workshop.png'
       },
       {
         company: 'PulseLive',
-        img: 'https://media.licdn.com/media/p/2/005/037/0ba/20e37f9.png'
+        img: '/assets/logos/pulselive.png'
       },
       {
         company: 'Quidco',

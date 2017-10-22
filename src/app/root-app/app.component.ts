@@ -3,21 +3,13 @@ import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, Navigatio
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styles:[`:host {
+    font-family: 'roboto';
+    background: #3d3d3d; margin: 100px auto;    padding: 0 20px;max-width: 1024px;
+  }`]
 })
 
 export class AppComponent {
   title = 'Welcome to my portfolio';
-  initialCount: number = 100;
-  
-  // constructor(private router: Router) {
-  //   router.events.subscribe((event: RouterEvent) => {
-  //     this.navigationInterceptor(event)
-  //   })
-  // } 
-  
-  // navigationInterceptor(event: RouterEvent): void {
-  //   console.log(event);
-  // }
-  
 }
