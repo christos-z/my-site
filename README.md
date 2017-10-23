@@ -1,6 +1,6 @@
 # My Portfolio
 
-My portfolio written in Angular 2, hooks into a mock api which will later be served via a nodejs backend. 
+My portfolio written in Angular 2 and hooks into a mock api which will later be served via a nodejs backend. 
 
 run `NPM install` and then `ng serve` to run.
 
