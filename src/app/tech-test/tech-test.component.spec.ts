@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpModule } from '@angular/http';
 
 import { TechTestComponent } from './tech-test.component';
 
@@ -8,10 +10,15 @@ describe('TechTestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TechTestComponent ]
+      declarations: [ TechTestComponent ],      
+      imports: [
+        HttpModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
+
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TechTestComponent);

@@ -33,7 +33,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('header')).not.toBe(null);
+    expect(compiled.querySelector('nav')).not.toBe(null);
   }));
 
   it('should render the header component', async(() => {

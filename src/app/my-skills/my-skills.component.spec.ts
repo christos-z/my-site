@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpModule } from '@angular/http';
 
 import { MySkillsComponent } from './my-skills.component';
 
@@ -8,7 +10,11 @@ describe('MySkillsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MySkillsComponent ]
+      declarations: [ MySkillsComponent ],
+      imports: [
+        HttpModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
